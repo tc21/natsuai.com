@@ -1,3 +1,12 @@
+The following is a copy of things I thought I could keep:
+
+```
+bundle exec jekyll serve
+bundle show minima
+https://help.github.com/articles/customizing-css-and-html-in-your-jekyll-theme/
+
+
+about.md:
 ---
 layout: page
 title: About
@@ -16,3 +25,6 @@ You can find the source code for Jekyll at GitHub:
 
 
 [jekyll-organization]: https://github.com/jekyll
+
+
+```
