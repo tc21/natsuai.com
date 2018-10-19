@@ -15,11 +15,10 @@ layout: default
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3 class="post-title">
+        <h3 name="{{ post.number }}" class="post-title">
           {{ post.title | escape }}
         </h3>
 
-        <!-- this next line courtesy of stackoverflow.com/questions/19389451 -->
         {{ post.content }}
       </li>
       {%- endfor -%}

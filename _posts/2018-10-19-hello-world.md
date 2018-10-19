@@ -2,6 +2,7 @@
 layout: post
 title:  "hello world"
 date:   2018-10-19 01:20:00 -0700
+number: 1
 ---
 
 You probably don't know me, and I probably don't know you.
