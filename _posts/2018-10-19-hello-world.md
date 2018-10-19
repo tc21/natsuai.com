@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "hello world"
+date:   2018-10-19 01:20:00 -0700
+---
+
+You probably don't know me, and I probably don't know you.
+That's fine.
+
+I mean, if you wanted to find out who I am, it's pretty easy.
