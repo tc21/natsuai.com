@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'mahjongtile-clr';
+    src: url('https://natsuai.com/static/fonts/GL-MahjongTile-Clr.woff2') format('woff2'),
+         url('https://natsuai.com/static/fonts/GL-MahjongTile-Clr.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'mahjongtile';
+    src: url('https://natsuai.com/static/fonts/GL-MahjongTile.otf') format('otf');
+}
+
+.tiles {
+    font-family: mahjongtile-clr, mahjongtile;
+}
