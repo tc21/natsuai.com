@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'testfont';
+    src: url('../../GL-MahjongTile-Clr.woff2') format('woff2')
+         url('../../GL-MahjongTile-Clr.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'gl-mahjongtile';
+    src: url('../../GL-MahjongTile.otf') format('otf');
+}
+
+.tiles {
+    font-family: testfont;
+}
