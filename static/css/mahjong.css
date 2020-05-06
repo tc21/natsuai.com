@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'mahjongtile-clr';
     src: url('https://natsuai.com/static/fonts/GL-MahjongTile-Clr.woff2') format('woff2'),
-         url('https://natsuai.com/static/fonts/GL-MahjongTile-Clr.woff') format('woff');
+        url('https://natsuai.com/static/fonts/GL-MahjongTile-Clr.woff') format('woff');
 }
 
 @font-face {
@@ -9,6 +9,119 @@
     src: url('https://natsuai.com/static/fonts/GL-MahjongTile.otf') format('otf');
 }
 
+:root {
+    --border-color: grey;
+    --tile-size: 2.4em;
+}
+
+html,
+body {
+    background-color: #ffffff;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif;
+    color: #23262d;
+    margin-bottom: 12vh;
+}
+
+code,
+pre {
+    font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+}
+
 .tiles {
     font-family: mahjongtile-clr, mahjongtile;
+    font-size: var(--tile-size);
+    position: relative;
+}
+
+p {
+    line-height: 2em;
+    margin: 1.4em 0;
+  }
+
+p .tiles,
+.hand-description .dora .tiles {
+    top: calc(0.1 * var(--tile-size));
+    line-height: 0;
+}
+
+@media screen and (min-width: 720px) {
+    body {
+        max-width: 1080px;
+        margin: auto;
+        padding: 0 24px;
+    }
+}
+
+.title {
+    font-size: 1.5em;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    margin-top: 0;
+    padding-left: 12px;
+    padding-bottom: 4px;
+    font-weight: 400;
+    font-size: 1.2em;
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+.heading {
+    width: 100%;
+    font-size: 1.2em;
+    border-top: 1px solid var(--border-color);
+    margin: 20px 0 12px 0;
+    padding: 10px 0 0 0;
+}
+
+footer {
+    margin: 12px;
+    padding: 12px;
+    padding-bottom: 24px;
+}
+
+.hand-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.hand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 12px;
+    border-left: 4px solid var(--border-color);
+}
+
+.hand-description {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 0.85em;
+    padding-bottom: 4px;
+}
+
+.hand-description .dora {
+    align-self: flex-end;
+}
+
+.hand-description .dora .tiles {
+    line-height: 0;
+}
+
+.hand .tiles {
+    font-size: 3em;
+}
+
+.hand-contents .tiles {
+    top: 0;
+}
+
+.tiles {
+    line-height: 1em;
 }
