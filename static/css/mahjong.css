@@ -34,7 +34,7 @@ pre {
 p {
     line-height: 2em;
     margin: 1.4em 0;
-  }
+}
 
 p .tiles,
 .hand-description .dora .tiles {
@@ -42,7 +42,7 @@ p .tiles,
     line-height: 0;
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 721px) {
     body {
         max-width: 1080px;
         margin: auto;
@@ -115,6 +115,19 @@ footer {
 
 .hand-contents .tiles {
     top: 0;
+}
+
+@media screen and (max-width: 720px) {
+    .hand-contents .tiles {
+        font-size: calc((130vw - 24px) / var(--number-of-tiles, 14));
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .hand-contents .tiles {
+        word-break: break-all;
+        font-size: 2.8em;
+    }
 }
 
 .tiles {
