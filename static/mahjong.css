@@ -113,9 +113,13 @@ header {
 }
 
 footer {
-    margin: 12px;
+    margin: 6px;
     padding: 12px;
     padding-bottom: 24px;
+}
+
+footer a {
+    margin: 6px;
 }
 
 .hand-container {
