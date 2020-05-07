@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: 'mahjongtile';
-    src: url('https://natsuai.com/static/fonts/GL-MahjongTile.otf') format('opentype');
+    src: url('https://natsuai.com/static/fonts/GL-MahjongTile.otf') format('otf');
 }
 
 :root {
@@ -28,7 +28,17 @@ pre {
 .tiles {
     font-family: mahjongtile-clr, mahjongtile;
     font-size: var(--tile-size);
+    line-height: 1em;
     position: relative;
+
+}
+
+.tiles-text {
+    font-size: 1.1em;
+    font-style: italic;
+    border: 1px solid #23262d;
+    border-radius: 2px;
+    padding: 0 1px;
 }
 
 p {
@@ -50,19 +60,39 @@ p .tiles,
     }
 }
 
+header {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4px;
+    margin-top: 12px;
+}
+
 .title {
     font-size: 1.5em;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 .subtitle {
     margin-top: 0;
     padding-left: 12px;
-    padding-bottom: 4px;
+    margin-bottom: 0;
     font-weight: 400;
     font-size: 1.2em;
+}
 
-    border-bottom: 1px solid var(--border-color);
+.convert-tiles {
+    color: inherit;
+    font-size: 0.95em;
+    flex: 1 1 auto;
+    text-align: right;
 }
 
 .heading {
@@ -130,6 +160,12 @@ footer {
     }
 }
 
-.tiles {
-    line-height: 1em;
+ul {
+    list-style: none;
+}
+
+li.chapter-heading {
+    font-size: 0.9em;
+    font-weight: 700;
+    margin-top: 1em;
 }

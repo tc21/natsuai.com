@@ -5,24 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>First Discard, Double East</title>
     <link rel="stylesheet" type="text/css" href="https://natsuai.com/static/css/mahjong.css">
+    
 </head>
 <body>
-    <h1 class="title">First Discard, Double East</h1> <h2 class="subtitle">Tile Order ①</h2>
-    <p>
+    <header>
+        <div class="title-container">
+            <h1 class="title">First Discard, Double East</h1>
+            <h2 class="subtitle"> Tile Order ①</h2>
+        </div>
+        <a class="convert-tiles" href="#" onclick="convert_tiles();">My tiles aren't showing properly!</a>
+    </header><p>
         In mahjong, the order of discarding honor tiles has a very small effect on the game, and therefore isn't talked about much. We should thoroughly think about it, so that we can properly confront the opening turns of a hand.
     </p>
     <div class="hand-container">
         <div class="hand">
             <div class="hand-description">
-                <div class="round"> East 1, Turn 1, North Seat</div><div class="dora">Dora: <span class="tiles"> z</span></div>
-            </div><div class="hand-contents"><span class="tiles">wweyuxcdfhh135</span></div>
+                <div class="round"> East 1, Turn 1, North Seat</div><div class="dora">Dora: <span class="tiles">z</span></div>
+            </div><div class="hand-contents"><span class="tiles">wweyuxcdfhh137</span></div>
         </div>
     </div>
     <p>
-        Take a look at this hand. Traditionally, the discard order would be <span class="tiles">3</span> because it doesn't give you a yaku, then <span class="tiles">5</span>, and then the round wind <span class="tiles">1</span>. Many people are especially careful with <span class="tiles">1</span>. Many people would think: &ldquo;I don't want the dealer to call it, so I'll keep it until I know it's safe, or wait until I have a good enough hand to play it.&rdquo;
+        Take a look at this hand. Traditionally, the discard order would be <span class="tiles">3</span> because it doesn't give you a yaku, then <span class="tiles">7</span>, and then the round wind <span class="tiles">1</span>. Many people are especially careful with <span class="tiles">1</span>. Many people would think: &ldquo;I don't want the dealer to call it, so I'll keep it until I know it's safe, or wait until I have a good enough hand to play it.&rdquo;
     </p>
     <p>
-        That was the theory 20 years ago, and the way of thinking has changed since then. The drawback of this playstyle is that it gives your opponents time to draw their <span class="tiles">1</span> into a pair so that they can call it, as well as making <span class="tiles">1</span> even more difficult to discard when someone else declares riichi. To prevent this from happening, when you have a hand as good as the one shown above, it has become widespread to discard from the most dangerous tile to the safest: <span class="tiles">1</span> &rarr; <span class="tiles">5</span> &rarr; <span class="tiles">3</span>.
+        That was the theory 20 years ago, and the way of thinking has changed since then. The drawback of this playstyle is that it gives your opponents time to draw their <span class="tiles">1</span> into a pair so that they can call it, as well as making <span class="tiles">1</span> even more difficult to discard when someone else declares riichi. To prevent this from happening, when you have a hand as good as the one shown above, it has become widespread to discard from the most dangerous tile to the safest: <span class="tiles">1</span> &rarr; <span class="tiles">7</span> &rarr; <span class="tiles">3</span>.
     </p>
     <p>
         Yamazaki Kazuo and Amano Haruo were amongst the first to advocate for this playstyle in the early 90s. Then they were the minority. In Amano's 1990 book <em>Riichi Mahjong Theory Reformist</em> (リーチ麻雀論改革派), he very harshly criticized the professional mahjong scene for being full of occult theories. I was moved by his attitude and his claims, and went to his mahjong parlor to learn from him when I was 18 years old.
@@ -31,16 +37,55 @@
         My thought process is: If I'm very likely to play this tile soon, then I'll play it right now. If I won't need to play it for a while, then I can hold on to it so that I can also form a pair with it.
     </p>
     <p>
-        Let's take another look at the hand shown above, based on this new thought process. Even if you discard <span class="tiles">3</span>, most likely you will be immediately discarding <span class="tiles">51</span> anyway. In these kinds of situations, you should discard <span class="tiles">1</span> first. If instead, you have a lot of useless terminal tiles, where you likely won't be discarding something like <span class="tiles">1</span> even if you discard an honor tile this turn, then you should safely discard <span class="tiles">3</span>.
+        Let's take another look at the hand shown above, based on this new thought process. Even if you discard <span class="tiles">3</span>, most likely you will be immediately discarding <span class="tiles">71</span> anyway. In these kinds of situations, you should discard <span class="tiles">1</span> first. If instead, you have a lot of useless terminal tiles, where you likely won't be discarding something like <span class="tiles">1</span> even if you discard an honor tile this turn, then you should safely discard <span class="tiles">3</span>.
     </p>
     <p>
         Each way of discarding honor tiles has its pros and cons. Instead of stubbornly deciding to &ldquo;discard yakuhai first!&rdquo; or &ldquo;hold on to yakuhai to prevent others from calling it&rdquo;, it is best to think about which way is the best and decide based on the situation at hand.
     </p>
-
+    
 
     <footer>
-
+        
         <a href="https://natsuai.com/mahjong/digital/post-0/index.html">Previous Page</a>
     </footer>
+
+    <script>
+        'use strict';
+
+        let tiles_text = 'Ea So We No Hk Ht Ch 1m 2m 3m 4m 5m 6m 7m 8m 9m 1p 2p 3p 4p 5p 6p 7p 8p 9p 1s 2s 3s 4s 5s 6s 7s 8s 9s'.split(' ');
+        let tiles_raw = '123456789qwertyuiozxcvbnm,.asdfghjkl'.split('');
+
+        function convert_to_text(element) {
+            element.textContent = element.textContent.split('').map(
+                (v, i, self) => tiles_text[tiles_raw.indexOf(v)]
+            ).join(' ');
+            element.classList.remove('tiles');
+            element.classList.add('tiles-text');
+        }
+
+        function convert_to_raw(element) {
+            element.textContent = element.textContent.split(' ').map(
+                (v, i, self) => tiles_raw[tiles_text.indexOf(v)]
+            ).join('');
+            element.classList.remove('tiles-text');
+            element.classList.add('tiles');
+        }
+
+        function convert_tiles() {
+            let tile_containers = document.getElementsByClassName('tiles');
+            let convert_func = convert_to_text;
+
+            if (tile_containers.length == 0) {
+                tile_containers = document.getElementsByClassName('tiles-text');
+                convert_func = convert_to_raw;
+            }
+
+            tile_containers = Array.from(tile_containers);
+
+            for (let i = 0; i < tile_containers.length; i++) {
+                convert_func(tile_containers[i]);
+            }
+        }
+    </script>
 </body>
 </html>

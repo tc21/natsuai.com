@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foreword</title>
     <link rel="stylesheet" type="text/css" href="https://natsuai.com/static/css/mahjong.css">
+    
 </head>
 <body>
-    <h1 class="title">Excerpts from スーパーデジタル麻雀 by 小林剛</h1>
-    <h2 class="subtitle">Excerpts from Super Digital Mahjong by Kobayashi Gō</h2>
+    <header>
+        <div class="title-container">
+            <h1 class="title">Excerpts from スーパーデジタル麻雀 by 小林剛</h1>
+            <h2 class="subtitle">Excerpts from Super Digital Mahjong by Kobayashi Gō</h2>
+        </div>
+        <a class="convert-tiles" href="#" onclick="convert_tiles();">My tiles aren't showing properly!</a>
+    </header>
     <p>
         This section is a translation of excerpts from the book <em>Super Digital Mahjong</em> from Kobayashi Gō of the M-League team U-NEXT Pirates. This is an intermediate-level leaning book, but it is pretty beginner-friendly too.
     </p>
@@ -63,5 +69,44 @@
         <a href="https://natsuai.com/mahjong/digital/post-1/index.html">Next Page</a>
         
     </footer>
+
+    <script>
+        'use strict';
+
+        let tiles_text = 'Ea So We No Hk Ht Ch 1m 2m 3m 4m 5m 6m 7m 8m 9m 1p 2p 3p 4p 5p 6p 7p 8p 9p 1s 2s 3s 4s 5s 6s 7s 8s 9s'.split(' ');
+        let tiles_raw = '123456789qwertyuiozxcvbnm,.asdfghjkl'.split('');
+
+        function convert_to_text(element) {
+            element.textContent = element.textContent.split('').map(
+                (v, i, self) => tiles_text[tiles_raw.indexOf(v)]
+            ).join(' ');
+            element.classList.remove('tiles');
+            element.classList.add('tiles-text');
+        }
+
+        function convert_to_raw(element) {
+            element.textContent = element.textContent.split(' ').map(
+                (v, i, self) => tiles_raw[tiles_text.indexOf(v)]
+            ).join('');
+            element.classList.remove('tiles-text');
+            element.classList.add('tiles');
+        }
+
+        function convert_tiles() {
+            let tile_containers = document.getElementsByClassName('tiles');
+            let convert_func = convert_to_text;
+
+            if (tile_containers.length == 0) {
+                tile_containers = document.getElementsByClassName('tiles-text');
+                convert_func = convert_to_raw;
+            }
+
+            tile_containers = Array.from(tile_containers);
+
+            for (let i = 0; i < tile_containers.length; i++) {
+                convert_func(tile_containers[i]);
+            }
+        }
+    </script>
 </body>
 </html>
