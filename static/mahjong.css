@@ -11,13 +11,14 @@
 }
 
 :root {
-    --border-color: grey;
+    --border-color: #78808c;
     --tile-size: 2.4em;
+    --text-color: #23262d;
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif;
-    color: #23262d;
+    color: var(--text-color);
     margin-bottom: 12vh;
 }
 
@@ -41,7 +42,7 @@ pre {
 .tiles-text {
     font-size: 1.1em;
     font-style: italic;
-    border: 1px solid #23262d;
+    border: 1px solid var(--text-color);
     border-radius: 2px;
     padding: 0 1px;
 }
@@ -246,7 +247,7 @@ li.chapter-heading {
 .example-list li::before {
     content: counter(list-counter, upper-alpha);
     border-radius: 2px;
-    background: #23262d;
+    background: var(--border-color);
     color: white;
     line-height: 2em;
     margin: 2px 0.5em 2px 0;
