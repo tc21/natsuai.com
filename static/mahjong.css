@@ -1,0 +1,253 @@
+
+@font-face {
+    font-family: 'mahjongtile-clr';
+    src: url('https://natsuai.com/static/fonts/GL-MahjongTile-Clr.woff2') format('woff2'),
+        url('https://natsuai.com/static/fonts/GL-MahjongTile-Clr.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'mahjongtile';
+    src: url('https://natsuai.com/static/fonts/GL-MahjongTile.otf') format('opentype');
+}
+
+:root {
+    --border-color: grey;
+    --tile-size: 2.4em;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif;
+    color: #23262d;
+    margin-bottom: 12vh;
+}
+
+code,
+pre {
+    font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+}
+
+.tiles {
+    font-family: mahjongtile-clr, mahjongtile;
+    font-size: var(--tile-size);
+    line-height: 1em;
+    position: relative;
+
+}
+
+.tiles.otf {
+    font-family: mahjongtile;
+}
+
+.tiles-text {
+    font-size: 1.1em;
+    font-style: italic;
+    border: 1px solid #23262d;
+    border-radius: 2px;
+    padding: 0 1px;
+}
+
+p {
+    line-height: 2em;
+    margin: 1.4em 0;
+}
+
+p .tiles,
+.hand-description .dora .tiles,
+.hand.compact .tiles {
+    top: calc(0.1 * var(--tile-size));
+    line-height: 0;
+}
+
+@media screen and (min-width: 721px) {
+    body {
+        max-width: 1080px;
+        margin: auto;
+        padding: 0 24px;
+    }
+}
+
+header {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4px;
+    margin-top: 12px;
+}
+
+.title {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.subtitle {
+    margin-top: 0;
+    padding-left: 12px;
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+.link-container {
+    flex: 1 1 auto;
+    text-align: right;
+}
+
+.convert-tiles {
+    color: inherit;
+    font-size: 0.95em;
+}
+
+.heading {
+    width: 100%;
+    font-size: 1.2em;
+    border-top: 1px solid var(--border-color);
+    margin: 20px 0 12px 0;
+    padding: 10px 0 0 0;
+}
+
+footer {
+    margin: 12px;
+    padding: 12px;
+    padding-bottom: 24px;
+}
+
+.hand-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.hand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 12px;
+    border-left: 4px solid var(--border-color);
+}
+
+.hand.compact {
+    border: none;
+    padding: 0;
+    flex-direction: row;
+}
+
+.hand.compact .dora {
+    margin-left: 0.5em;
+}
+
+.hand.compact .dora rt {
+    margin-top: -1.2em;
+    margin-bottom: 1em;
+    font-size: 0.6em;
+    position: relative;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+}
+
+.hand-description {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 0.85em;
+    padding-bottom: 4px;
+}
+
+.hand-description .dora {
+    align-self: flex-end;
+}
+
+.hand-description .dora .tiles {
+    line-height: 0;
+}
+
+.hand .tiles {
+    font-size: 3em;
+}
+
+.hand-contents .tiles {
+    top: 0;
+}
+
+@media screen and (max-width: 720px) {
+    .hand-contents .tiles {
+        font-size: calc((130vw - 24px) / var(--number-of-tiles, 14));
+    }
+
+    .hand.compact .hand-contents .tiles {
+        font-size: calc((130vw - 24px) / var(--number-of-tiles, 15));
+    }
+
+    .hand.compact .dora .tiles {
+        font-size: calc((130vw - 24px) / var(--number-of-tiles, 15))
+    }
+
+    .hand.compact .dora rt {
+        margin-bottom: calc(4vw - 1.3em);
+    }
+
+    ul, ol {
+        padding-left: 12px;
+    }
+
+    .example-list li {
+        margin-top: calc(3vw);
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .hand-contents .tiles,
+    .hand.compact .hand-contents .tiles,
+    .hand.compact .dora .tiles {
+        word-break: break-all;
+        font-size: 2.8em;
+        line-height: 0.5em;
+    }
+
+    .hand.compact .dora rt {
+        margin-bottom: 0.8em;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+li.chapter-heading {
+    font-size: 0.9em;
+    font-weight: 700;
+    margin-top: 1em;
+}
+
+
+.example-list {
+    list-style: none;
+    counter-reset: list-counter;
+}
+
+.example-list li {
+    counter-increment: list-counter;
+    display: flex;
+    line-height: 2em;
+    margin-top: 0.8em;
+    align-items: center;
+}
+
+.example-list li::before {
+    content: counter(list-counter, upper-alpha);
+    border-radius: 2px;
+    background: #23262d;
+    color: white;
+    line-height: 2em;
+    margin: 2px 0.5em 2px 0;
+    padding: 2px 1px;
+    width: 1em;
+    text-align: center;
+    flex-shrink: 0;
+}

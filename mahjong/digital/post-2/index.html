@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Era Where Atozuke is the Norm</title>
+    <link rel="stylesheet" type="text/css" href="https://natsuai.com/static/css/mahjong.css">
+    
+</head>
+<body>
+    <header>
+        <div class="title-container">
+            <h1 class="title">The Era Where Atozuke is the Norm</h1>
+            <h2 class="subtitle"> Tile Order ②</h2>
+        </div>
+        <div class="link-container">
+            <a class="convert-tiles" href="#" onclick="convert_tiles();">My tiles aren't showing properly</a>
+        </div>
+    </header><p>
+         We'll continue to talk about the order of discarding honor tiles in this section. A major reason the idea of &ldquo;if you have a good hand, you should discard honor tiles from more dangerous to safe&rdquo; has taken hold is how the way people call tiles have changed since the past.
+    </p>
+    <ol class="example-list" type="A">
+        <li>
+            <div class="hand-container">
+                <div class="hand compact">
+                    <div class="hand-contents"><span class="tiles">wwruuinmsf377</span></div><div class="dora"><ruby><span class="tiles">.</span><rt>Dora</rt></ruby></div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="hand-container">
+                <div class="hand compact">
+                    <div class="hand-contents"><span class="tiles">weruucvsfh377</span></div><div class="dora"><ruby><span class="tiles">u</span><rt>Dora</rt></ruby></div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="hand-container">
+                <div class="hand compact">
+                    <div class="hand-contents"><span class="tiles">qeruucn,aadl37</span></div><div class="dora"><ruby><span class="tiles">h</span><rt>Dora</rt></ruby></div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="hand-container">
+                <div class="hand compact">
+                    <div class="hand-contents"><span class="tiles">eruooxxcnmfg23</span></div><div class="dora"><ruby><span class="tiles">l</span><rt>Dora</rt></ruby></div>
+                </div>
+            </div>
+        </li>
+    </ol>
+    <p>
+         In the past, many people with hand <strong>A</strong> would only call <span class="tiles">7</span>, the tile that gives the hand a yaku. Nowadays more people are realizing that <span class="tiles">7</span> is easy to call anytime, as well as being a relatively safe tile. Thus the kan-<span class="tiles">d</span> is also a good candidate to start calling from, as it otherwise tends to become the weak point of the hand.
+    </p>
+    <p>
+         People with hand <strong>B</strong> would typically call <span class="tiles">d</span> and <span class="tiles">7</span>. But nowadays, many people would also call <span class="tiles">x</span> or even <span class="tiles">b</span> or tiles(5s) just to get closer to tenpai.
+    </p>
+    <p>
+         In such an environment, holding on to yakuhai (to prevent people from calling) not only slows down your hand, allowing others to build their hands more efficiently, but also carries the risk of holding on to a yakuhai tile for too long, and ending up dealing in with it. If everyone is throwing their yakuhai early and you alone hold on to them, then naturally your hands will become slower than everybody else's.
+    </p>
+    <p>
+         And so, increasingly common are people who most of the time discard their yakuhai first. For example, when faced with hand <strong>C</strong>, a rather undesirable hand, you could still discard <span class="tiles">7</span> first. The idea is to prioritize getting rid of yakuhai before it gets draw into a pair, regardless of what your own hand looks like. And if it gets called anyway, at least you now know what their hand is like, making it easier to react to them.
+    </p>
+    <p>
+         Of course, it would be reckless to always discard yakuhai first regardless of situation. You should always be considering the situation at hand as well as point differences. Hand <strong>D</strong> is one where you would typically discard <span class="tiles">2</span>. But if it's all last, and you are first by a large margin, while the 4th-placed south-seat player only needs 2000 points to avoid last, you would consider discarding <span class="tiles">3</span> first. Since in this situation you would prefer to have the south-seat player call <span class="tiles">2</span> and win, you can choose to hold on to <span class="tiles">2</span> for a few turns, hoping that the south-seat player draws it into a pair in the meantime.
+    </p>
+    
+
+    <footer>
+        
+        <a href="https://natsuai.com/mahjong/digital/post-1/">Previous Page</a>
+    </footer>
+
+    <script>
+        'use strict';
+
+        let tiles_text = 'Ea So We No Wh Gr Rd 1m 2m 3m 4m 5m 6m 7m 8m 9m 1p 2p 3p 4p 5p 6p 7p 8p 9p 1s 2s 3s 4s 5s 6s 7s 8s 9s'.split(' ');
+        let tiles_raw = '1234567qwertyuiozxcvbnm,.asdfghjkl'.split('');
+
+        function convert_to_text(element) {
+            element.textContent = element.textContent.split('').map(
+                (v, i, self) => tiles_text[tiles_raw.indexOf(v)]
+            ).join(' ');
+            element.classList.remove('tiles');
+            element.classList.remove('otf');
+            element.classList.add('tiles-text');
+        }
+
+        function convert_to_raw(element) {
+            element.textContent = element.textContent.split(' ').map(
+                (v, i, self) => tiles_raw[tiles_text.indexOf(v)]
+            ).join('');
+            element.classList.remove('tiles-text');
+            element.classList.add('tiles');
+        }
+
+        function convert_to_otf(element) {
+            element.classList.add('otf');
+        }
+
+        function convert_tiles() {
+            let tile_containers = document.getElementsByClassName('tiles otf');
+            let convert_func = convert_to_text;
+            let new_link_text = 'Try colored tiles again';
+
+            if (tile_containers.length == 0) {
+                tile_containers = document.getElementsByClassName('tiles');
+                convert_func = convert_to_otf;
+                new_link_text = "My tiles still aren't showing correctly!";
+            }
+
+            if (tile_containers.length == 0) {
+                tile_containers = document.getElementsByClassName('tiles-text');
+                convert_func = convert_to_raw;
+                new_link_text = "My tiles aren't showing correctly";
+            }
+
+            tile_containers = Array.from(tile_containers);
+
+            for (let i = 0; i < tile_containers.length; i++) {
+                convert_func(tile_containers[i]);
+            }
+
+            let link = document.getElementsByClassName('convert-tiles')[0];
+            link.textContent = new_link_text;
+        }
+
+        let incompatible_browsers = ['Chrome', 'Opera', 'OPE', 'MSIE'];
+
+        for (let i = 0; i < incompatible_browsers.length; i++) {
+            if (navigator.userAgent.indexOf(incompatible_browsers[i]) >= 0) {
+                convert_tiles();
+            }
+        }
+    </script>
+</body>
+</html>
