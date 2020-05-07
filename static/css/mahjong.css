@@ -88,11 +88,14 @@ header {
     font-size: 1.2em;
 }
 
+.link-container {
+    flex: 1 1 auto;
+    text-align: right;
+}
+
 .convert-tiles {
     color: inherit;
     font-size: 0.95em;
-    flex: 1 1 auto;
-    text-align: right;
 }
 
 .heading {
