@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: 'mahjongtile';
-    src: url('https://natsuai.com/static/fonts/GL-MahjongTile.otf') format('otf');
+    src: url('https://natsuai.com/static/fonts/GL-MahjongTile.otf') format('opentype');
 }
 
 :root {
@@ -31,6 +31,10 @@ pre {
     line-height: 1em;
     position: relative;
 
+}
+
+.tiles.otf {
+    font-family: mahjongtile;
 }
 
 .tiles-text {

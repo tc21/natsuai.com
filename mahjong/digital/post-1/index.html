@@ -14,7 +14,7 @@
             <h2 class="subtitle"> Tile Order ①</h2>
         </div>
         <div class="link-container">
-            <a class="convert-tiles" href="#" onclick="convert_tiles();">My tiles aren't showing properly!</a>
+            <a class="convert-tiles" href="#" onclick="convert_tiles();">My tiles aren't showing properly</a>
         </div>
     </header><p>
         In mahjong, the order of discarding honor tiles has a very small effect on the game, and therefore isn't talked about much. We should thoroughly think about it, so that we can properly confront the opening turns of a hand.
@@ -62,6 +62,7 @@
                 (v, i, self) => tiles_text[tiles_raw.indexOf(v)]
             ).join(' ');
             element.classList.remove('tiles');
+            element.classList.remove('otf');
             element.classList.add('tiles-text');
         }
 
@@ -73,19 +74,42 @@
             element.classList.add('tiles');
         }
 
+        function convert_to_otf(element) {
+            element.classList.add('otf');
+        }
+
         function convert_tiles() {
-            let tile_containers = document.getElementsByClassName('tiles');
+            let tile_containers = document.getElementsByClassName('tiles otf');
             let convert_func = convert_to_text;
+            let new_link_text = 'Try colored tiles again';
+
+            if (tile_containers.length == 0) {
+                tile_containers = document.getElementsByClassName('tiles');
+                convert_func = convert_to_otf;
+                new_link_text = "My tiles still aren't showing correctly!";
+            }
 
             if (tile_containers.length == 0) {
                 tile_containers = document.getElementsByClassName('tiles-text');
                 convert_func = convert_to_raw;
+                new_link_text = "My tiles aren't showing correctly";
             }
 
             tile_containers = Array.from(tile_containers);
 
             for (let i = 0; i < tile_containers.length; i++) {
                 convert_func(tile_containers[i]);
+            }
+
+            let link = document.getElementsByClassName('convert-tiles')[0];
+            link.textContent = new_link_text;
+        }
+
+        let incompatible_browsers = ['Chrome', 'Opera', 'OPE', 'MSIE'];
+
+        for (let i = 0; i < incompatible_browsers.length; i++) {
+            if (navigator.userAgent.indexOf(incompatible_browsers[i]) >= 0) {
+                convert_tiles();
             }
         }
     </script>
