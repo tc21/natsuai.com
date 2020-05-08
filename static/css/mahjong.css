@@ -150,13 +150,21 @@ footer a {
     margin-left: 0.5em;
 }
 
-.hand.compact .dora rt {
-    margin-top: -1.2em;
-    margin-bottom: 1em;
-    font-size: 0.6em;
+.ruby {
     position: relative;
+}
+
+.rt {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    font-size: 0.6em;
+    text-align: center;
+    margin-top: -1.5em;
     background: rgba(255, 255, 255, 0.6);
     border-radius: 2px;
+    height: 1em;
+    line-height: 1em;
 }
 
 .hand-description {
@@ -197,8 +205,8 @@ footer a {
         font-size: calc((130vw - 24px) / var(--number-of-tiles, 15))
     }
 
-    .hand.compact .dora rt {
-        margin-bottom: calc(4vw - 1.3em);
+    .hand.compact .rt {
+        margin-top: -2.2vw;
     }
 
     ul, ol {
@@ -210,7 +218,7 @@ footer a {
     }
 }
 
-@media screen and (max-width: 374px) {
+@media screen and (max-width: 375px) {
     .hand-contents .tiles,
     .hand.compact .hand-contents .tiles,
     .hand.compact .dora .tiles {
