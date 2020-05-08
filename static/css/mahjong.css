@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'mahjongtile-clr';
     src: url('https://natsuai.com/static/fonts/GL-MahjongTile-Clr.woff2') format('woff2'),
@@ -10,19 +11,24 @@
 }
 
 :root {
-    --border-color: grey;
+    --border-color: #78808c;
     --tile-size: 2.4em;
+    --text-color: #23262d;
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif;
-    color: #23262d;
+    color: var(--text-color);
     margin-bottom: 12vh;
 }
 
 code,
 pre {
     font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+}
+
+a {
+    color: #186bd8;
 }
 
 .tiles {
@@ -40,7 +46,7 @@ pre {
 .tiles-text {
     font-size: 1.1em;
     font-style: italic;
-    border: 1px solid #23262d;
+    border: 1px solid var(--text-color);
     border-radius: 2px;
     padding: 0 1px;
 }
@@ -51,7 +57,8 @@ p {
 }
 
 p .tiles,
-.hand-description .dora .tiles {
+.hand-description .dora .tiles,
+.hand.compact .tiles {
     top: calc(0.1 * var(--tile-size));
     line-height: 0;
 }
@@ -111,9 +118,13 @@ header {
 }
 
 footer {
-    margin: 12px;
+    margin: 6px;
     padding: 12px;
     padding-bottom: 24px;
+}
+
+footer a {
+    margin: 6px;
 }
 
 .hand-container {
@@ -127,6 +138,25 @@ footer {
     align-items: center;
     padding: 6px 12px;
     border-left: 4px solid var(--border-color);
+}
+
+.hand.compact {
+    border: none;
+    padding: 0;
+    flex-direction: row;
+}
+
+.hand.compact .dora {
+    margin-left: 0.5em;
+}
+
+.hand.compact .dora rt {
+    margin-top: -1.2em;
+    margin-bottom: 1em;
+    font-size: 0.6em;
+    position: relative;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
 }
 
 .hand-description {
@@ -158,12 +188,39 @@ footer {
     .hand-contents .tiles {
         font-size: calc((130vw - 24px) / var(--number-of-tiles, 14));
     }
+
+    .hand.compact .hand-contents .tiles {
+        font-size: calc((130vw - 24px) / var(--number-of-tiles, 15));
+    }
+
+    .hand.compact .dora .tiles {
+        font-size: calc((130vw - 24px) / var(--number-of-tiles, 15))
+    }
+
+    .hand.compact .dora rt {
+        margin-bottom: calc(4vw - 1.3em);
+    }
+
+    ul, ol {
+        padding-left: 12px;
+    }
+
+    .example-list li {
+        margin-top: calc(3vw);
+    }
 }
 
 @media screen and (max-width: 374px) {
-    .hand-contents .tiles {
+    .hand-contents .tiles,
+    .hand.compact .hand-contents .tiles,
+    .hand.compact .dora .tiles {
         word-break: break-all;
         font-size: 2.8em;
+        line-height: 0.5em;
+    }
+
+    .hand.compact .dora rt {
+        margin-bottom: 0.8em;
     }
 }
 
@@ -175,4 +232,45 @@ li.chapter-heading {
     font-size: 0.9em;
     font-weight: 700;
     margin-top: 1em;
+}
+
+.example-list {
+    list-style: none;
+    counter-reset: list-counter;
+}
+
+.example-list li {
+    counter-increment: list-counter;
+    display: flex;
+    line-height: 2em;
+    margin-top: 0.8em;
+    align-items: center;
+}
+
+.example-list li::before {
+    content: counter(list-counter, upper-alpha);
+    border-radius: 2px;
+    background: var(--border-color);
+    color: white;
+    line-height: 2em;
+    margin: 2px 0.5em 2px 0;
+    padding: 2px 1px;
+    width: 1em;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.footnote-link,
+.footnote-return-link {
+    text-decoration: none;
+    vertical-align: super;
+    font-size: 0.5em;
+}
+
+.footnotes {
+    font-size: 0.9em;
+}
+
+.footnotes .footnote-return-link {
+    font-size: 0.7em;
 }
