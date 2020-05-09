@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing with 5 Blocks</title>
+    <link rel="stylesheet" type="text/css" href="https://natsuai.com/static/css/mahjong.css">
+    <script src="https://natsuai.com/static/js/mahjong.js"></script>
+    <script src="https://natsuai.com/static/js/mahjong-chrome-compatibility.js"></script>
+    
+</head>
+<body>
+    <header>
+        <div class="title-container">
+            <h1 class="title">Playing with 5 Blocks</h1>
+            <h2 class="subtitle">Tile Order ⑮</h2>
+        </div>
+        <div class="link-container">
+            <a class="convert-tiles" href="#" onclick="convert_tiles();">My tiles aren't showing properly</a>
+        </div>
+    </header>
+    <div class="main-content">
+        <p>
+             With the exception of chiitoitsu and kokushi-musou, all mahjong hands have a shape of &ldquo;4 sets and 1 pair&rdquo;. This &ldquo;4 sets and 1 pair&rdquo; combined makes 5 blocks. It is very important to think of mahjong as making 5 blocks.
+        </p>
+        <ul>
+            <li>
+                <div class="hand-container">
+                    <div class="hand compact">
+                        <div class="hand-contents"><span class="tiles">qwyuxcm..fgg77</span></div><div class="dora">
+                            <div class="ruby"><span class="tiles">6</span><div class="rt">Dora</div></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <p>
+             Many people might look at the hand above and want to play <span class="tiles">g</span> to secure a two-sided shape, but my recommendation here is to discard <span class="tiles">qw</span>. At a glance it might seem like a loss in tile efficiency, it's important to consider the progression of the hand later on. Let's consider what would happen if you discarded <span class="tiles">g</span>, and then drew a ryanmen shape, or the <span class="tiles">7</span> set.
+        </p>
+        <ul>
+            <li>
+                <div class="hand-container">
+                    <div class="hand compact">
+                        <div class="hand-contents"><span class="tiles">qwyuzxcm..fg77</span></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="hand-container">
+                    <div class="hand compact">
+                        <div class="hand-contents"><span class="tiles">qwyuxcm..fg777</span></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <p>
+             Either way, it looks like you will end up discarding <span class="tiles">qw</span>. Even if instead of <span class="tiles">g</span> you discarded <span class="tiles">m</span> the situation would be the same. The only situation where you won't discard <span class="tiles">qw</span> would be if you drew <span class="tiles">e</span>.
+        </p>
+        <p>
+             We can also look at it from another perspective. After discarding <span class="tiles">g</span>, you would be <span id="footnote-tag-1">
+                tsumogiri-ing<a class="footnote-link" href="#footnote-content-1" title="jump to footnote 1">[1]</a>
+            </span> until you complete your next set. Tiles that can form a pair like <span class="tiles">yuxc</span>, or safe tiles like <span class="tiles">3</span>, would all have to be discarded. If we had discarded <span class="tiles">qw</span> instead, we would lose the <span class="tiles">e</span> draw, but gain a &ldquo;free spot&rdquo; in our hand for any tile we want. This is especially helpful if we wanted to keep a safe tile, or the dora <span class="tiles">6</span>. In short, discarding 5s makes your hand appear more efficient, but actually constrains your hand, making it too inflexible. Discarding <span class="tiles">qw</span> is less efficient for now, but gives you the flexibility to handle whatever tile that happens to come your way.
+        </p>
+        <p>
+             Why is such a thing happening? If you look at the hand at the very beginning, you'll see that the hand has 6 sets of tiles that could potentially become a complete set (i.e. 6 &ldquo;blocks&rdquo;): <span class="tiles">qw</span>, <span class="tiles">yu</span>, <span class="tiles">xc</span>, <span class="tiles">m..</span>, <span class="tiles">fgg</span>, <span class="tiles">77</span>. It is impossible to utilize all 6 blocks in your hand. You must give up one one of them in order to win. In most cases, you will end up giving up the <span class="tiles">qw</span> block. In such a situation, you should give up on the weaker block that you would most likely end up giving up anyway, and hold on to the 5 stronger blocks in your hand.
+        </p>
+         
+    </div>
+    <ol class="footnotes">
+        <li id="footnote-content-1">
+            <strong><a href="#footnote-tag-1" class="footnote-return-link" title="jump back">[^]</a></strong>
+             That is, discarding the tile you draw.
+        </li>
+    </ol>
+    
+
+    <footer>
+        <a href="https://natsuai.com/mahjong/digital/chapter-1-3/">Previous Page</a>
+        <a href="https://natsuai.com/mahjong/digital/chapter-1-16/">Next Page</a>
+    </footer>
+</body>
+</html>

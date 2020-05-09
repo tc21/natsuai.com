@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding 5 Strongest Blocks</title>
+    <link rel="stylesheet" type="text/css" href="https://natsuai.com/static/css/mahjong.css">
+    <script src="https://natsuai.com/static/js/mahjong.js"></script>
+    <script src="https://natsuai.com/static/js/mahjong-chrome-compatibility.js"></script>
+    
+</head>
+<body>
+    <header>
+        <div class="title-container">
+            <h1 class="title">Finding 5 Strongest Blocks</h1>
+            <h2 class="subtitle">Tile Order ⑯</h2>
+        </div>
+        <div class="link-container">
+            <a class="convert-tiles" href="#" onclick="convert_tiles();">My tiles aren't showing properly</a>
+        </div>
+    </header>
+    <div class="main-content">
+        <p>
+             Let's think about how to choose which block to break up. A strong block is one that is easily completed (e.g. <span id="footnote-tag-1">
+                ryanmen<a class="footnote-link" href="#footnote-content-1" title="jump to footnote 1">[1]</a>
+            </span> blocks) or one that you really want to complete (e.g. double <span class="tiles">1</span>). A weak block would be one that is difficult to complete (e.g. <span id="footnote-tag-2">
+                penchan<a class="footnote-link" href="#footnote-content-2" title="jump to footnote 2">[2]</a>
+            </span> blocks).
+        </p>
+        <p>
+             (Translator's note: perhaps stop and think about what you would discard with each of these hands before continuing.)
+        </p>
+        <ol class="example-list">
+            <li>
+                <div class="hand-container">
+                    <div class="hand compact">
+                        <div class="hand-contents"><span class="tiles">qqyyucvnm,gh77</span></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="hand-container">
+                    <div class="hand compact">
+                        <div class="hand-contents"><span class="tiles">erxcvn,fhk1133</span></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="hand-container">
+                    <div class="hand compact">
+                        <div class="hand-contents"><span class="tiles">wecvggghkll477</span></div>
+                    </div>
+                </div>
+            </li>
+        </ol>
+        <p>
+             <strong>A</strong>'s weakest blocks are <span class="tiles">q</span> and <span class="tiles">7</span>. There is very little difference in how easily they are completed. <span class="tiles">q</span> is the correct discard here, since yakuhai is more valuable.
+        </p>
+        <p>
+             <strong>B</strong> (assume east round dealer) is a much harder example. It's full of weak blocks. First of all, discarding <span class="tiles">k</span> is not an option: it leaves you with 6 blocks, of which <span class="tiles">n,</span> and <span class="tiles">fh</span> are both very weak. Next, if you discard <span class="tiles">3</span> and then pon <span class="tiles">1</span>, you are left with no pairs. Here you should think of <span class="tiles">fhk</span> as a strong block and discard <span class="tiles">,</span>.
+        </p>
+        <p>
+             Now let's look at <strong>C</strong>. Focus on the shape of the souzu. Depending on how many blocks you view it as, you choice of discard may change. You can choose to view the souzu as these 3 blocks: <span class="tiles">ggg</span>, <span class="tiles">hk</span>, <span class="tiles">ll</span>. But you already have 3 more blocks in your hand, so you don't want these kind of weak blocks. Therefore you should think of <span class="tiles">kll</span> as one block. Your useless tiles here are <span class="tiles">h</span> and <span class="tiles">4</span>, and you should discard the dangerous tile <span class="tiles">h</span> and keep the safer tile <span class="tiles">4</span>.
+        </p>
+        <p>
+             If I showed you hand <strong>C</strong> and asked you, &ldquo;What should you discard here?&rdquo;, you might want to discard <span class="tiles">4</span>, but then think that too obvious an answer, and decide to answer <span class="tiles">h</span>. It is important that you learn to discard <span class="tiles">h</span> not just in this context, but also when actually playing mahjong. You should always be deepening your understanding of the shapes that appear in mahjong, and over time, learn to not discard <span class="tiles">4</span> when faced with a hand like example <strong>C</strong>.
+        </p>
+        <p>
+             Keeping 5-block theory in mind while playing mahjong is a great way to improve your tile efficiency and win rate. That said, although usually you should be discarding your weakest block when you have 6 blocks, there may be times where you can't find your weakest block. In that case one of your choices would be to secure a two-sided shape and play with 6 blocks for the time being. The best thing to do is to gain as much knowledge and experience as you can, so that you can find a way to flexibly react to any situation you may face.
+        </p>
+         
+    </div>
+    <ol class="footnotes">
+        <li id="footnote-content-1">
+            <strong><a href="#footnote-tag-1" class="footnote-return-link" title="jump back">[^]</a></strong>
+             Literally, &ldquo;two sided&rdquo;. Two adjacent tiles, completable on both sides. e.g. <span class="tiles">er</span>.
+        </li>
+        <li id="footnote-content-2">
+            <strong><a href="#footnote-tag-2" class="footnote-return-link" title="jump back">[^]</a></strong>
+             Literally, &ldquo;edge tiles&rdquo;. A terminal tile and the tile next to it. e.g. <span class="tiles">qw</span>
+        </li>
+    </ol>
+    
+
+    <footer>
+        <a href="https://natsuai.com/mahjong/digital/chapter-1-15/">Previous Page</a>
+        
+    </footer>
+</body>
+</html>

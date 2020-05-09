@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Tile Discard Order</title>
+    <link rel="stylesheet" type="text/css" href="https://natsuai.com/static/css/mahjong.css">
+    <script src="https://natsuai.com/static/js/mahjong.js"></script>
+    <script src="https://natsuai.com/static/js/mahjong-chrome-compatibility.js"></script>
+    
+</head>
+<body>
+    <header>
+        <div class="title-container">
+            <h1 class="title">
+                 <span id="footnote-tag-1">
+                    Terminal Tile<a class="footnote-link" href="#footnote-content-1" title="jump to footnote 1">[1]</a>
+                </span> Discard Order
+            </h1>
+            <h2 class="subtitle">Tile Order ③</h2>
+        </div>
+        <div class="link-container">
+            <a class="convert-tiles" href="#" onclick="convert_tiles();">My tiles aren't showing properly</a>
+        </div>
+    </header>
+    <div class="main-content">
+        
+        <p>
+             After honor tiles, let's talk about terminal tiles. Much like honor tiles, tiles that look similar at first glance may have miniscule differences, which can add up to a real difference in your results.
+        </p>
+        <div class="caption-flex-container">
+            <div class="caption-container">
+                <div class="caption-content">
+                    <ol class="example-list">
+                        <li>
+                            <div class="hand-container">
+                                <div class="hand compact">
+                                    <div class="hand-contents"><span class="tiles">quiiozv,,.shk1</span></div><div class="dora">
+                                        <div class="ruby"><span class="tiles">h</span><div class="rt">Dora</div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="hand-container">
+                                <div class="hand compact">
+                                    <div class="hand-contents"><span class="tiles">quiiozvv,,.hk1</span></div><div class="dora">
+                                        <div class="ruby"><span class="tiles">h</span><div class="rt">Dora</div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="hand-container">
+                                <div class="hand compact">
+                                    <div class="hand-contents"><span class="tiles">quiiozvvv,,hk1</span></div><div class="dora">
+                                        <div class="ruby"><span class="tiles">h</span><div class="rt">Dora</div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                <div class="caption-text">East 1, Turn 1, Dealer</div>
+            </div>
+        </div>
+        <p>
+             <strong>A</strong> is the dealer's starting hand. As dealer, you wouldn't discard the double <span class="tiles">1</span>, so you're choosing between <span class="tiles">q</span> and tiles(1p). There correct discard here is <span class="tiles">z</span>. Discarding <span class="tiles">q</span> causes you to miss out on <span class="tiles">qwe</span> draws. On the other hand, because you have <span class="tiles">v</span>, discarding <span class="tiles">z</span> still allows you to make use of <span class="tiles">x</span> and <span class="tiles">c</span>, limiting your tile efficiency loss to a minimum.
+        </p>
+        <p>
+             <strong>B</strong> is just like <strong>A</strong>: there correct discard is <span class="tiles">z</span>. There is not much reason to keep the <span class="tiles">z</span> here. Even if you make <span class="tiles">zxvv</span>, it's difficult to make two sets out of that shape.
+        </p>
+        <p>
+             What about <strong>C</strong>? The difference between <strong>C</strong> and the previous two hands is that here <span class="tiles">v</span> already forms a completed set. In this situation <span class="tiles">q</span> and <span class="tiles">z</span> are basically the same in efficiency. Then, you should consider that, if you end up tenpai on a tile next to <span class="tiles">q</span> or <span class="tiles">z</span>, which one would be better? Because you already see 3 of the <span class="tiles">v</span>, other people will have a harder time making use of <span class="tiles">x</span> or <span class="tiles">c</span>. Therefore, if you intend to be riichi-ing with this hand, you should discard <span class="tiles">q</span>, aiming to potentially win on others' <span class="tiles">x</span> or <span class="tiles">c</span> discard. Some of you may be worried of holding on to too many tiles from the <span class="tiles">zv</span> suji, but there's no reason to worry about that if it's still the first turn.
+        </p>
+        <ol class="example-list" style="counter-reset: list-counter 3;">
+            <li>
+                <div class="hand-container">
+                    <div class="hand compact">
+                        <div class="hand-contents"><span class="tiles">tyuuizbm,aj777</span></div><div class="dora">
+                            <div class="ruby"><span class="tiles">,</span><div class="rt">Dora</div></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ol>
+        <p>
+             Now let's look at <strong>D</strong>. Once upon a time it was thought that drawing <span class="tiles">c</span> would create a <span class="tiles">zcb</span> shape, and so <span class="tiles">a</span> would be the better discard. But from a simple tile efficiency standpoint, discarding <span class="tiles">z</span> still allows you to utilize <span class="tiles">c</span>, so you're only losing <span class="tiles">zx</span>. Discarding <span class="tiles">a</span> loses you <span class="tiles">asd</span>. Some people like to emphasize the benefits of the ryankan <span class="tiles">zcb</span> shape if you draw <span class="tiles">c</span>, but you won't lose the <span class="tiles">v</span> draw even if you discard <span class="tiles">z</span>: discarding <span class="tiles">z</span> only loses you the <span class="tiles">x</span> draw. Compared to the small benefit if the <span class="tiles">zcb</span> shape, the loss of tile efficiency by discarding <span class="tiles">a</span> is much larger. Discarding <span class="tiles">z</span> is more efficient here.
+        </p>
+        <p>
+             Ryankan shapes are important when you want to make pinfu, but a hand like <strong>D</strong> cannot become pinfu to begin with, and indeed most hands are better suited for this playstyle.
+        </p>
+        
+    </div>
+    <ol class="footnotes">
+        <li id="footnote-content-1">
+            <strong><a href="#footnote-tag-1" class="footnote-return-link" title="jump back">[^]</a></strong>
+             That is, 1's and 9's of each suit.
+        </li>
+    </ol>
+    
+
+    <footer>
+        <a href="https://natsuai.com/mahjong/digital/chapter-1-2/">Previous Page</a>
+        <a href="https://natsuai.com/mahjong/digital/chapter-1-15/">Next Page</a>
+    </footer>
+</body>
+</html>

@@ -58,7 +58,8 @@ p {
 
 p .tiles,
 .hand-description .dora .tiles,
-.hand.compact .tiles {
+.hand.compact .tiles,
+.footnotes .tiles {
     top: calc(0.1 * var(--tile-size));
     line-height: 0;
 }
@@ -222,7 +223,7 @@ footer a {
     .hand-contents .tiles,
     .hand.compact .hand-contents .tiles,
     .hand.compact .dora .tiles {
-        word-break: break-all;
+        word-break: break-word;
         font-size: 2.8em;
         line-height: 0.5em;
     }
@@ -255,6 +256,11 @@ li.chapter-heading {
     align-items: center;
 }
 
+.main-content li {
+    line-height: 2em;
+    margin-top: 0.8em;
+}
+
 .example-list li::before {
     content: counter(list-counter, upper-alpha);
     border-radius: 2px;
@@ -281,4 +287,19 @@ li.chapter-heading {
 
 .footnotes .footnote-return-link {
     font-size: 0.7em;
+}
+
+.caption-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caption-flex-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.caption-text {
+    font-size: 0.9em;
 }
