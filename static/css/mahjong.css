@@ -131,6 +131,7 @@ footer a {
 .hand-container {
     display: flex;
     align-items: flex-start;
+    justify-content: center;
 }
 
 .hand {
@@ -279,11 +280,17 @@ li.chapter-heading {
 .footnote-return-link {
     text-decoration: none;
     vertical-align: super;
-    font-size: 0.5em;
+    font-size: 0.7em;
+    font-weight: 700;
 }
 
 .footnotes {
+    border-top: 1px solid var(--border-color);
     font-size: 0.9em;
+}
+
+.footnotes li {
+    margin-bottom: 0.5em;
 }
 
 .footnotes .footnote-return-link {
@@ -303,4 +310,190 @@ li.chapter-heading {
 
 .caption-text {
     font-size: 0.9em;
+}
+
+/* mahjong-table */
+.tiles .tile-separator {
+    display: inline-block;
+    width: calc(0.5 * var(--display-base, 2rem));
+    height: calc(0.5 * var(--display-base, 2rem));
+}
+
+.mahjong-table {
+    --display-base: 1em;
+}
+
+@media screen and (max-width: 40em) {
+    .mahjong-table {
+        --display-base: calc((100vw - 24px) / 36);
+    }
+}
+
+.mahjong-table {
+    display: grid;
+    width: calc(36 * var(--display-base));
+    height: calc(36.75 * var(--display-base));
+
+    max-width: 36em;
+    max-height: 36.75em;
+
+    grid-template-rows: 1fr 3.5fr 3fr 3.5fr 1.25fr;
+    grid-template-columns: 1fr 3.5fr 3fr 3.5fr 1fr;
+    grid-template-areas:
+        ".            hand-across     hand-across      hand-across   ."
+        "hand-prev    discards-across discards-across  discards-next    hand-next"
+        "hand-prev    discards-prev   center           discards-next    hand-next"
+        "hand-prev    discards-prev   discards-current discards-current hand-next"
+        "hand-current hand-current    hand-current     hand-current     hand-current";
+}
+
+.mahjong-table .center {
+    grid-area: center;
+    font-size: calc(1 * var(--display-base));
+
+    width: calc(9 * var(--display-base));
+    height: calc(9 * var(--display-base));
+
+    display: grid;
+    grid-template-rows: 2fr 5fr 2fr;
+    grid-template-columns: 2fr 5fr 2fr;
+    grid-template-areas:
+        ".          score-across  ."
+        "score-prev situation-box score-next"
+        ".          score-current .";
+
+    border: 1px solid var(--text-color);
+    border-radius: 2px;
+}
+
+.mahjong-table .center .situation-container {
+    grid-area: situation-box;
+
+    width: calc(4.5 * var(--display-base));
+    height: calc(4.5 * var(--display-base));
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: calc(0.5 * var(--display-base));
+    background-color: var(--text-color);
+    border-radius: 2px;
+    color: white;
+}
+
+.mahjong-table .center .situation-container .round-container {
+    flex: 1 1 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mahjong-table .center .situation-container .dora-indicator {
+    flex: 1 1 50%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    font-size: calc(0.8 * var(--display-base));
+    border-top: 1px dashed white;
+}
+
+.mahjong-table .center .player-score {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mahjong-table .center .player-score .wind {
+    background-color: var(--text-color);
+    color: white;
+    border-radius: 2px;
+    margin: calc(0.2 * var(--display-base));
+    width: calc(1.2 * var(--display-base));
+    height: calc(1.2 * var(--display-base));
+    line-height: calc(1.1 * var(--display-base));
+    text-align: center;
+}
+
+.mahjong-table .center .player-score.player-current {
+    grid-area: score-current;
+}
+
+.mahjong-table .center .player-score.player-next {
+    grid-area: score-next;
+}
+
+.mahjong-table .center .player-score.player-across {
+    grid-area: score-across;
+}
+
+.mahjong-table .center .player-score.player-prev {
+    grid-area: score-prev;
+}
+
+.mahjong-table .player-hand {
+    align-self: center;
+    justify-self: center;
+    font-size: calc(1 * var(--display-base));
+}
+
+.mahjong-table .player-hand.player-current {
+    grid-area: hand-current;
+    font-size: calc(1.2 * var(--display-base));
+}
+
+.mahjong-table .player-hand.player-next {
+    grid-area: hand-next;
+}
+
+.mahjong-table .player-hand.player-across {
+    grid-area: hand-across;
+}
+
+.mahjong-table .player-hand.player-prev {
+    grid-area: hand-prev;
+}
+
+.mahjong-table .player-discards {
+    font-size: calc(1 * var(--display-base));
+}
+
+.mahjong-table .player-discards.player-current {
+    grid-area: discards-current;
+    align-self: start;
+    justify-self: start;
+}
+
+.mahjong-table .player-discards.player-next {
+    grid-area: discards-next;
+    align-self: end;
+    justify-self: start;
+}
+
+.mahjong-table .player-discards.player-across {
+    grid-area: discards-across;
+    align-self: end;
+    justify-self: end;
+}
+
+.mahjong-table .player-discards.player-prev {
+    grid-area: discards-prev;
+    align-self: start;
+    justify-self: end;
+}
+
+.mahjong-table .player-prev {
+    writing-mode: sideways-rl;
+}
+
+.mahjong-table .player-next {
+    writing-mode: sideways-lr;
+}
+
+.mahjong-table .player-across {
+    transform: rotate(180deg);
 }

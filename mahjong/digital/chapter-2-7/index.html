@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break Haitei</title>
+    <link rel="stylesheet" type="text/css" href="https://natsuai.com/static/css/mahjong.css">
+    <script src="https://natsuai.com/static/js/mahjong.js"></script>
+    <script src="https://natsuai.com/static/js/mahjong-chrome-compatibility.js"></script>
+    
+</head>
+<body>
+    <header>
+        <div class="title-container">
+            <h1 class="title">Break Haitei</h1>
+            <h2 class="subtitle">This is Mahjong ⑦</h2>
+        </div>
+        <div class="link-container">
+            <a class="convert-tiles" href="#" onclick="convert_tiles();">My tiles aren't showing properly</a>
+        </div>
+    </header>
+    <div class="main-content">
+        <p>
+             Like ippatsu, haitei is something we'd like to break up if we can. If you are approaching the end of a hand and you're not tenpai, then there's no drawback to ruining up your hand by breaking someone else's haitei. So haitei is something we definitely want to break.
+        </p>
+        <p>
+             You will need to recognize who has the haitei draw. Now, do you know who gets the haitei draw if a hand goes to <span id="footnote-tag-1">
+                ryuukyoku<a class="footnote-link" href="#footnote-content-1" title="jump to footnote 1">[1]</a>
+            </span>, without any calls from anyone?
+        </p>
+        <p>
+             It's the player sitting at south. with 14 tiles in the dead wall, that means the south-player's 18th draw is the haitei tile. A chi pushes the haitei to the next person, a pon from the player across sends haitei to the player across, and a pon from a previous player moves the haitei tile one seat backwards. After you figure out who has the haitei draw, you especially want to prevent it from being drawn by a player in riichi.
+        </p>
+        <div class="mahjong-table">
+            <div class="center">
+                <div class="situation-container">
+                    <div class="round-container"><div class="round">East 4</div></div>
+                    <div class="dora-indicator">Dora: <span class="tiles">6y</span></div>
+                </div>
+                <div class="player-score player-current">
+                    <div class="wind">S</div>
+                    <div class="score"> 34100</div>
+                </div>
+                <div class="player-score player-next">
+                    <div class="wind">W</div>
+                    <div class="score"> 20000</div>
+                </div>
+                <div class="player-score player-across">
+                    <div class="wind">N</div>
+                    <div class="score">23900</div>
+                </div>
+                <div class="player-score player-prev">
+                    <div class="wind">E</div>
+                    <div class="score">21000</div>
+                </div>
+            </div>
+            <div class="player-hand player-current"><span class="tiles">ruuvbnm,df111</span></div>
+            <div class="player-discards player-current">
+                <div class="discard-row"><span class="tiles">4z,iol</span></div><div class="discard-row"><span class="tiles">3g5ea6</span></div><div class="discard-row"><span class="tiles">.xnx</span></div>
+            </div>
+            <div class="player-hand player-next"><span class="tiles">9999999999999</span></div>
+            <div class="player-discards player-next">
+                <div class="discard-row"><span class="tiles">2qchto</span></div><div class="discard-row"><span class="tiles">wfwel6</span></div><div class="discard-row"><span class="tiles">..da</span></div>
+            </div>
+            <div class="player-hand player-across"><span class="tiles">9999999999999</span></div>
+            <div class="player-discards player-across">
+                <div class="discard-row"><span class="tiles">l45jmj</span></div><div class="discard-row"><span class="tiles">jfssw6</span></div><div class="discard-row"><span class="tiles">gxdn</span></div>
+            </div>
+            <div class="player-hand player-prev">
+                <span class="tiles">9999999999<span class="tile-separator"></span>9kk9</span>
+            </div>
+            <div class="player-discards player-prev">
+                <div class="discard-row"><span class="tiles">l4sow#</span></div><div class="discard-row"><span class="tiles">af3en6</span></div><div class="discard-row"><span class="tiles">3xdba</span></div>
+            </div>
+        </div>
+        <p>
+             Please look at this situation. The dealer declared riichi on turn 6. They called <span class="tiles">k</span> into a kan on turn 8. After that, everyone else bailed their hands. Unfortunately the haitei tile will be the dealer's next draw. You weren't able to break haitei, so it there anything you can do? You have a lot of safe tiles, but which one is <span id="footnote-tag-2">
+                shimocha<a class="footnote-link" href="#footnote-content-2" title="jump to footnote 2">[2]</a>
+            </span> most likely to call? They don't look like they have any souzu, so you probably want to discard <span class="tiles">b</span> or <span class="tiles">n</span>. There are three <span class="tiles">n</span> visible from your viewpoint, so it's less likely that they have it. <span class="tiles">n</span> is the most likely to be called.
+        </p>
+        <p>
+             It's very tempting to say <span class="tiles">n</span> is the correct discard here, but think more carefully. Even if shimocha calls <span class="tiles">n</span> here, the dealer still has one more draw. Is there a way to prevent even that from happening? The key here is the <span class="tiles">1</span>-triplet. Consider that the dealer's riichi declaration tile is <span class="tiles">3</span>. The dealer, in east round, would not riichi with a tanki wait on the shonpai <span class="tiles">1</span> when they already see a <span class="tiles">3</span>discarded.<span id="footnote-tag-3">
+                <a class="footnote-link" href="#footnote-content-3" title="jump to footnote 3">[3]</a>
+            </span> They would wait on the <span class="tiles">3</span>.<span id="footnote-tag-4">
+                <a class="footnote-link" href="#footnote-content-4" title="jump to footnote 4">[4]</a>
+            </span> Therefore, <span class="tiles">1</span> is basically a safe tile. Discard <span class="tiles">1</span>, and you can pon it if anyone else also discards it! Then you will have prevented the dealer's next draw entirely from happening. As long as the person declaring riichi is one that plays reliably, this is a very useful techinque. Learn to use it when you play.
+        </p>
+         
+    </div>
+    <ol class="footnotes">
+        <li id="footnote-content-1">
+            <strong><a href="#footnote-tag-1" class="footnote-return-link" title="jump back">[^]</a></strong>
+             Exhaustive draw. I will be using the term ryuukyoku throughout the translation.
+        </li>
+        <li id="footnote-content-2">
+            <strong><a href="#footnote-tag-2" class="footnote-return-link" title="jump back">[^]</a></strong>
+             &ldquo;下家&rdquo;, the player sitting to your right. I wanted to avoid using this word but hopefully everyone understands it.
+        </li>
+        <li id="footnote-content-3">
+            <strong><a href="#footnote-tag-3" class="footnote-return-link" title="jump back">[^]</a></strong>
+             You'll probably notice that there is no  <span class="tiles">3</span>  discarded prior to the dealer's riichi. This is probably a misprint. I decided to reproduce the table exactly, but I assume there was meant to be a  <span class="tiles">3</span>  discarded before the dealer riichi.
+        </li>
+        <li id="footnote-content-4">
+            <strong><a href="#footnote-tag-4" class="footnote-return-link" title="jump back">[^]</a></strong>
+             Translator's note: This book has a whole chapter dedicated to hand reading. Hand reading only works when your opponents are playing competently, scientifically, and not actively working to trick you into misreading their hands. Please keep that in mind.
+        </li>
+    </ol>
+    
+
+    <footer>
+        <a href="https://natsuai.com/mahjong/digital/chapter-2-6/">Previous Page</a>
+        
+    </footer>
+</body>
+</html>
