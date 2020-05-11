@@ -486,14 +486,10 @@ li.chapter-heading {
     justify-self: end;
 }
 
-.mahjong-table .player-prev {
-    writing-mode: sideways-rl;
+.mahjong-table .player-prev, .mahjong-table .player-next {
+    writing-mode: vertical-rl;
 }
 
-.mahjong-table .player-next {
-    writing-mode: sideways-lr;
-}
-
-.mahjong-table .player-across {
+.mahjong-table .player-across, .mahjong-table .player-next {
     transform: rotate(180deg);
 }
