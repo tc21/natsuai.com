@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'mahjongtile-clr';
     src: url('https://natsuai.com/static/fonts/GL-MahjongTile-Clr.woff2') format('woff2'),
@@ -439,6 +438,9 @@ li.chapter-heading {
     align-self: center;
     justify-self: center;
     font-size: calc(1 * var(--display-base));
+
+    display: flex;
+    flex-direction: column;
 }
 
 .mahjong-table .player-hand.player-current {
@@ -492,4 +494,28 @@ li.chapter-heading {
 
 .mahjong-table .player-across, .mahjong-table .player-next {
     transform: rotate(180deg);
+}
+
+.mahjong-table .hand .dora .tiles,
+.mahjong-table .hand .hand-contents .tiles {
+    font-size: var(--tile-size);
+}
+
+.mahjong-table .player-current .player-name {
+    font-size: 0.9em;
+    margin-top: -12px;
+    margin-bottom: 12px;
+}
+
+.mahjong-table .player-across .player-name {
+    text-align: right;
+    transform: rotate(180deg);
+}
+
+.caption-text {
+    margin: 12px;
+}
+
+.mahjong-table {
+    margin: 12px 0;
 }
