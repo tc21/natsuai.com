@@ -54,8 +54,8 @@ function convert_tiles() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-    let convert_tiles = document.getElementsByClassName('convert-tiles');
-    for (let i = 0; i < convert_tiles.length; i++) {
-        convert_tiles[i].addEventListener('click', convert_tiles);
+    let convert_tiles_element = document.getElementsByClassName('convert-tiles');
+    for (let i = 0; i < convert_tiles_element.length; i++) {
+        convert_tiles_element[i].addEventListener('click', () => convert_tiles());
     }
 });
