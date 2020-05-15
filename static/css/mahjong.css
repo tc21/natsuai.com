@@ -26,6 +26,12 @@ pre {
     font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
 }
 
+code {
+    background-color: rgba(12, 15, 18, 0.1);
+    border-radius: 2px;
+    padding: 0 2px;
+}
+
 a {
     color: #186bd8;
 }
@@ -61,6 +67,10 @@ p .tiles,
 .footnotes .tiles {
     top: calc(0.1 * var(--tile-size));
     line-height: 0;
+}
+
+.footnotes .tiles {
+    font-size: 1.8rem;
 }
 
 @media screen and (min-width: 721px) {
