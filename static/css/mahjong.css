@@ -179,7 +179,7 @@ footer {
 .rt {
     position: absolute;
     top: 0;
-    width: 100%;
+    width: auto;
     font-size: 0.6em;
     text-align: center;
     margin-top: -1.5em;
@@ -188,6 +188,9 @@ footer {
     height: 1em;
     line-height: 1em;
     font-weight: 700;
+
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 .hand-description {
@@ -209,6 +212,18 @@ footer {
 
 .hand .tiles {
     font-size: 3em;
+}
+
+
+.tiles .sideways {
+    display: inline-block;
+    transform: translateY(0.12em);
+    margin: 0 -0.1em;
+}
+
+.mahjong-table .player-discards .tiles .sideways {
+    transform: none;
+    margin: 0;
 }
 
 .hand-contents .tiles {
