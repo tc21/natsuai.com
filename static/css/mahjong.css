@@ -56,12 +56,13 @@ a {
     padding: 0 1px;
 }
 
-p {
+p, .paragraph {
     line-height: 2em;
     margin: 1.4em 0;
 }
 
 p .tiles,
+.paragraph .tiles,
 .hand-description .dora .tiles,
 .hand.compact .tiles,
 .footnotes .tiles {
@@ -71,14 +72,6 @@ p .tiles,
 
 .footnotes .tiles {
     font-size: 1.8rem;
-}
-
-@media screen and (min-width: 721px) {
-    body {
-        max-width: 1080px;
-        margin: auto;
-        padding: 0 24px;
-    }
 }
 
 header {
@@ -150,8 +143,6 @@ footer {
 
 .hand-container {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
 }
 
 .hand {
@@ -230,6 +221,22 @@ footer {
     top: 0;
 }
 
+@media screen and (min-width: 721px) {
+    body {
+        max-width: 1080px;
+        margin: auto;
+        padding: 0 24px;
+    }
+
+    .hand-container {
+        margin: 0 2em;
+    }
+
+    li .hand-container {
+        margin: 0;
+    }
+}
+
 @media screen and (max-width: 720px) {
     .hand-contents .tiles {
         font-size: calc((130vw - 24px) / var(--number-of-tiles, 14));
@@ -282,6 +289,9 @@ li.chapter-heading {
 
 .example-list {
     list-style: none;
+}
+
+.reset-counter {
     counter-reset: list-counter;
 }
 
@@ -291,6 +301,10 @@ li.chapter-heading {
     line-height: 2em;
     margin-top: 0.8em;
     align-items: center;
+}
+
+.main-content {
+    counter-reset: list-counter;
 }
 
 .main-content li {
@@ -345,6 +359,61 @@ li.chapter-heading {
 
 .caption-text {
     font-size: 0.9em;
+    margin: 12px;
+    margin-top: 0;
+}
+
+/* html tables and some styles */
+.table-container {
+    margin: 0.6em 0;
+}
+
+.table-container table {
+    border-collapse: collapse;
+    margin: 0 2px;
+}
+
+.table-container td {
+    border-bottom: 1px solid var(--border-color);
+    padding: 2px 4px;
+}
+
+.table-container th td, .table-container tr:first-child td {
+    border-top: 2px solid var(--border-color);
+}
+
+.table-container tr:last-child td {
+    border-bottom: 2px solid var(--border-color);
+}
+
+.table-container caption {
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.6em;
+}
+
+.table-container tbody > :nth-child(2n) {
+    background-color: #dee2e7;
+}
+
+.two-column-data {
+    max-width: 30em;
+}
+
+.two-column-data table {
+    width: 100%;
+}
+
+.two-column-data table td:last-child {
+    text-align: right;
+}
+
+.strong-caption table caption {
+    background-color: var(--border-color);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    color: white;
+    margin: 4px 0;
 }
 
 /* mahjong-table */
@@ -546,10 +615,6 @@ li.chapter-heading {
 .mahjong-table .player-across .player-name {
     text-align: right;
     transform: rotate(180deg);
-}
-
-.caption-text {
-    margin: 12px;
 }
 
 .mahjong-table {
