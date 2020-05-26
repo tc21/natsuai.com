@@ -331,6 +331,7 @@ li.chapter-heading {
     vertical-align: super;
     font-size: 0.7em;
     font-weight: 700;
+    line-height: 0;
 }
 
 .footnotes {
@@ -424,7 +425,7 @@ li.chapter-heading {
 }
 
 .mahjong-table {
-    --display-base: 1em;
+    --display-base: 1rem;
 }
 
 @media screen and (max-width: 40em) {
@@ -492,6 +493,8 @@ li.chapter-heading {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    text-align: center;
 }
 
 .mahjong-table .center .situation-container .dora-indicator {
