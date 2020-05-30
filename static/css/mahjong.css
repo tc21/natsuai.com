@@ -172,19 +172,21 @@ hr {
     position: relative;
 }
 
-.rt {
+.ruby .rt {
     position: absolute;
     top: 0;
     width: auto;
-    font-size: 0.6em;
+    font-size: 0.72em;
     text-align: center;
     margin-top: -1.5em;
     background: rgba(255, 255, 255, 0.6);
     border-radius: 2px;
     height: 1em;
     line-height: 1em;
-    font-weight: 700;
+    font-weight: 600;
+}
 
+.ruby-center .rt {
     margin-left: 50%;
     transform: translateX(-50%);
 }
@@ -217,6 +219,7 @@ hr {
     margin: 0 -0.1em;
 }
 
+.discards .tiles .sideways,
 .mahjong-table .player-discards .tiles .sideways {
     transform: none;
     margin: 0;
@@ -226,60 +229,11 @@ hr {
     top: 0;
 }
 
-@media screen and (min-width: 721px) {
-    body {
-        max-width: 1080px;
-        margin: auto;
-        padding: 0 24px;
-    }
-
-    .hand-container {
-        margin: 0 2em;
-    }
-
-    li .hand-container {
-        margin: 0;
-    }
-}
-
-@media screen and (max-width: 720px) {
-    .hand-contents .tiles {
-        font-size: calc((130vw - 24px) / var(--number-of-tiles, 14));
-    }
-
-    .hand.compact .hand-contents .tiles {
-        font-size: calc((130vw - 24px) / var(--number-of-tiles, 15));
-    }
-
-    .hand.compact .dora .tiles {
-        font-size: calc((130vw - 24px) / var(--number-of-tiles, 15))
-    }
-
-    .hand.compact .rt {
-        margin-top: -2.2vw;
-    }
-
-    ul, ol {
-        padding-left: 12px;
-    }
-
-    .example-list li {
-        margin-top: calc(3vw);
-    }
-}
-
-@media screen and (max-width: 375px) {
-    .hand-contents .tiles,
-    .hand.compact .hand-contents .tiles,
-    .hand.compact .dora .tiles {
-        word-break: break-word;
-        font-size: 2.8em;
-        line-height: 0.5em;
-    }
-
-    .hand.compact .dora rt {
-        margin-bottom: 0.8em;
-    }
+.sideways-text {
+    writing-mode: vertical-lr;
+    font-size: 0.6em;
+    line-height: 0em;
+    transform: translateX(-0.6em) rotate(180deg);
 }
 
 ul {
@@ -435,22 +389,30 @@ li.chapter-heading {
     margin: 4px 0;
 }
 
-.table-container.static-width th:not(:first-child) {
+.table-container.static-width-8 th {
     width: 8em;
+}
+
+.table-container.static-width-6 th {
+    width: 6em;
+}
+
+.table-container.static-width-4 th {
+    width: 4em;
 }
 
 .table-container.center-text td, .center-text th {
     text-align: center;
 }
 
+.table-container.unstriped tbody > :nth-child(2n) {
+    background-color: transparent;
+}
+
 /* inline blocks */
 .inline ol, .inline ul, .inline li {
     margin: 0;
     line-height: initial;
-}
-
-.inline ol, .inline ul, .inline .table-container {
-    padding-left: 2rem;
 }
 
 .inline ol {
@@ -465,6 +427,10 @@ li.chapter-heading {
     padding-bottom: 0.5rem;
 }
 
+.inline.padding-around {
+    padding: 1rem 0;
+}
+
 /* mahjong-table */
 .tiles .tile-separator {
     display: inline-block;
@@ -474,12 +440,6 @@ li.chapter-heading {
 
 .mahjong-table {
     --display-base: 1rem;
-}
-
-@media screen and (max-width: 40em) {
-    .mahjong-table {
-        --display-base: calc((100vw - 24px) / 36);
-    }
 }
 
 .mahjong-table {
@@ -670,4 +630,86 @@ li.chapter-heading {
 
 .mahjong-table {
     margin: 12px 0;
+}
+
+@media screen and (max-width: 40em) {
+    .mahjong-table {
+        --display-base: calc((100vw - 24px) / 36);
+    }
+}
+
+@media screen and (min-width: 641px) {
+    body {
+        max-width: 1080px;
+        margin: auto;
+        padding: 0 24px;
+    }
+
+    .hand-container {
+        margin: 0 2em;
+    }
+
+    li .hand-container {
+        margin: 0;
+    }
+
+    .inline ol, .inline ul, .inline .table-container {
+        padding-left: 2rem;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .hand-contents .tiles {
+        font-size: calc((130vw - 24px) / var(--number-of-tiles, 14));
+    }
+
+    .hand.compact .hand-contents .tiles {
+        font-size: calc((130vw - 24px) / var(--number-of-tiles, 15));
+    }
+
+    .hand.compact .dora .tiles {
+        font-size: calc((130vw - 24px) / var(--number-of-tiles, 15))
+    }
+
+    .hand.compact .rt {
+        margin-top: -2.2vw;
+    }
+
+    ul, ol {
+        padding-left: 12px;
+    }
+
+    .example-list li {
+        margin-top: calc(3vw);
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .hand-contents .tiles {
+        word-break: break-word;
+        font-size: 2.8em;
+        line-height: 0.5em;
+    }
+    .hand-contents  {
+        padding: 0.5em 0;
+    }
+
+    .hand.compact .hand-contents .tiles,
+    .hand.compact .dora .tiles {
+        word-break: break-word;
+        font-size: 2.8em;
+        line-height: 0.5em;
+    }
+
+    .hand.compact .dora rt {
+        margin-bottom: 0.8em;
+    }
+
+    .ruby .rt {
+        margin-top: 0;
+    }
+
+    .table-container th, .table-container td {
+        overflow-wrap: anywhere;
+    }
 }
