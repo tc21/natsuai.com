@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Dealerships are Worth 500 Points</title>
+    <link rel="stylesheet" type="text/css" href="https://natsuai.com/static/css/mahjong.css">
+    <script src="https://natsuai.com/static/js/mahjong.js"></script>
+    <script src="https://natsuai.com/static/js/mahjong-chrome-compatibility.js"></script>
+    
+</head>
+<body>
+    <header>
+        <div class="title-container">
+            <h1 class="title">Dealerships are Worth 500 Points</h1>
+            <h2 class="subtitle">This is Mahjong ③</h2>
+        </div>
+        <div class="navigation-links">
+            <div class="left">
+                <a class="left" href="https://natsuai.com/mahjong/digital/chapter-2-2/">Previous Page</a>
+                <a class="left" href="https://natsuai.com/mahjong/digital/chapter-2-4/">Next Page</a>
+            </div>
+
+            <div class="right">
+                <a href="..">Table of Contents</a>
+                <a class="convert-tiles" href="#">My tiles aren't showing properly</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="table-container strong-caption static-width center-text">
+            <table>
+                <caption>Expected Gain Model Case</caption>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Total Gain</th>
+                        <th>Loss by Deal-In</th>
+                        <th>Loss by Tsumo</th>
+                        <th>Net Gain</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>East</td>
+                        <td>+48000</td>
+                        <td>&minus;24000</td>
+                        <td>&minus;12000</td>
+                        <td>+12000</td>
+                    </tr>
+                    <tr>
+                        <td>South</td>
+                        <td>+32000</td>
+                        <td>&minus;28000</td>
+                        <td>&minus;8000</td>
+                        <td>&minus;4000</td>
+                    </tr>
+                    <tr>
+                        <td>North</td>
+                        <td>+32000</td>
+                        <td>&minus;28000</td>
+                        <td>&minus;8000</td>
+                        <td>&minus;4000</td>
+                    </tr>
+                    <tr>
+                        <td>West</td>
+                        <td>+32000</td>
+                        <td>&minus;28000</td>
+                        <td>&minus;8000</td>
+                        <td>&minus;4000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="inline padding-bottom">
+            Conditions:
+            <ol>
+                <li>16 hands, each player winning 4 hands</li>
+                <li>Each player wins off of each other player once, and by tsumo once</li>
+                <li>Each hand is a mangan</li>
+            </ol>
+        </div>
+        <div class="inline padding-bottom">
+            Net gain per hand:
+            <div class="table-container no-style">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Dealer</td>
+                            <td>&rarr;</td>
+                            <td>+750</td>
+                        </tr>
+                        <tr>
+                            <td>Non-dealer</td>
+                            <td>&rarr;</td>
+                            <td>&minus;250</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr>
+
+
+        <p>
+             <span id="footnote-tag-1">Riichi because you are dealer<a class="footnote-link" href="#footnote-content-1" title="jump to footnote 1">[1]</a></span>, call the first tile because you're dealer, <span id="footnote-tag-2">zentsuppa<a class="footnote-link" href="#footnote-content-2" title="jump to footnote 2">[2]</a></span> because you're dealer, bail when the dealer declares riichi, etc. In mahjong, there are many sayings regarding the dealer. But do these sayings really understand what it means to be dealer?
+        </p>
+        <p>
+             There are two reasons to do something specifically because you are the dealer. One is that a dealer's hand is worth 1.5 times as much as a non-dealer's. The other is the possibility of keeping your dealership. I think everyone has had the experience of winning multiple hands during their dealership and building a huge lead. I asked the people around me how much they think a dealership is worth. &ldquo;1000 points.&rdquo; &ldquo;3000 points.&rdquo; &ldquo;5000 points.&rdquo; People seem to expect a large gain from a dealership.
+        </p>
+        <p>
+             Let's look at the actual value of a dealership in terms of the quite simplified case given above.
+        </p>
+        <p>
+             Over the course of 16 hands, each a mangan win, the average gain by being dealer is 750 points. This is even lower than the smallest hand you can possibly win in mahjong. Not to mention in this model the average win is 12000 for dealers, 8000 for non-dealers. Since in reality the average win for dealers is around 7000-8000, and non-dealers 4000-5000. Thus the expected value of a dealership is lower than 750, at perhaps around 500. Also, the model uses a tsumo rate of 25%, when in reality it's closer to 40%. This brings the value even lower to about 400. Thus we can say the value of a dealership is around 400 points. To some people, this number might be a lot lower than expected, but this is what we verified it to be.
+        </p>
+        <p>
+             Additionally, looking at statistics from Tenhou's Houou tables, where the best online mahjong players play, the expected value of a dealership is about 500 points. This is the result of everyone playing while being aware of the power of dealerships, as well as counting ryuukyoku payments. Considering the possibility of dealerships continuing forever, perhaps the average gain of a single dealership is around 650 to 700.
+        </p>
+         
+    </div>
+
+    <footer>
+
+        <ol class="footnotes">
+            <li id="footnote-content-1">
+                <strong><a href="#footnote-tag-1" class="footnote-return-link" title="jump back">[^]</a></strong>
+                  This phrase actually is a technical term, &ldquo;親につきリーチ&rdquo;, specifically referring to declaring riichi on an otherwise bad hand <em>only</em> because you are dealer, for the purpose of keeping your dealership.
+            </li>
+            <li id="footnote-content-2">
+                <strong><a href="#footnote-tag-2" class="footnote-return-link" title="jump back">[^]</a></strong>
+                  Zentsuppa (&ldquo;全ツッパ&rdquo;) refers to fully attacking without defending. I have left this term untranslated as it is commonly used this way.
+            </li>
+        </ol>
+
+        <div class="navigation-links">
+            <div class="left">
+                <a class="left" href="https://natsuai.com/mahjong/digital/chapter-2-2/">Previous Page</a>
+                <a class="left" href="https://natsuai.com/mahjong/digital/chapter-2-4/">Next Page</a>
+            </div>
+
+            <div class="right">
+                <a href="..">Table of Contents</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

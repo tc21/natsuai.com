@@ -62,6 +62,7 @@ p, .paragraph {
 }
 
 p .tiles,
+li .tiles,
 .paragraph .tiles,
 .hand-description .dora .tiles,
 .hand.compact .tiles,
@@ -79,8 +80,12 @@ header {
 }
 
 footer {
-    padding: 12px;
     padding-bottom: 24px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
 }
 
 .navigation-links {
@@ -364,6 +369,18 @@ li.chapter-heading {
     margin-top: 0;
 }
 
+.table-container.no-style, .table-container.no-style table {
+    margin: 0;
+    padding-left: 1em;
+}
+
+.table-container.no-style th, .table-container.no-style td, .table-container.no-style tr {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    padding-right: 0.5em !important;
+}
+
 /* html tables and some styles */
 .table-container {
     margin: 0.6em 0;
@@ -372,14 +389,15 @@ li.chapter-heading {
 .table-container table {
     border-collapse: collapse;
     margin: 0 2px;
+    /*! table-layout: fixed; */
 }
 
-.table-container td {
+.table-container td, .table-container th {
     border-bottom: 1px solid var(--border-color);
     padding: 2px 4px;
 }
 
-.table-container th td, .table-container tr:first-child td {
+.table-container tr:first-child td {
     border-top: 2px solid var(--border-color);
 }
 
@@ -397,24 +415,54 @@ li.chapter-heading {
     background-color: #dee2e7;
 }
 
-.two-column-data {
+.table-container.two-column-data {
     max-width: 30em;
 }
 
-.two-column-data table {
+.table-container.two-column-data table {
     width: 100%;
 }
 
-.two-column-data table td:last-child {
+.table-container.two-column-data table td:last-child {
     text-align: right;
 }
 
-.strong-caption table caption {
+.table-container.strong-caption table caption {
     background-color: var(--border-color);
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
     color: white;
     margin: 4px 0;
+}
+
+.table-container.static-width th:not(:first-child) {
+    width: 8em;
+}
+
+.table-container.center-text td, .center-text th {
+    text-align: center;
+}
+
+/* inline blocks */
+.inline ol, .inline ul, .inline li {
+    margin: 0;
+    line-height: initial;
+}
+
+.inline ol, .inline ul, .inline .table-container {
+    padding-left: 2rem;
+}
+
+.inline ol {
+    list-style: inside arabic;
+}
+
+.inline ul {
+    list-style: inside;
+}
+
+.inline.padding-bottom {
+    padding-bottom: 0.5rem;
 }
 
 /* mahjong-table */
