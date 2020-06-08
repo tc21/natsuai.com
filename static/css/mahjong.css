@@ -11,7 +11,7 @@
 
 :root {
     --border-color: #78808c;
-    --tile-size: 2.4em;
+    --tile-size: 2.6em;
     --text-color: #23262d;
 }
 
@@ -41,11 +41,22 @@ a {
     font-size: var(--tile-size);
     line-height: 1em;
     position: relative;
-
+    letter-spacing: -0.112em;
 }
 
 .tiles.otf {
     font-family: mahjongtile;
+    letter-spacing: -0.086em;
+}
+
+p > .tiles,
+.paragraph > .tiles {
+    padding-right: 0.112rem;
+}
+
+p > .tiles.otf,
+.paragraph > .tiles.otf {
+    padding-right: 0.186rem;
 }
 
 .tiles-text {
@@ -165,7 +176,7 @@ hr {
 }
 
 .hand.compact .dora {
-    margin-left: 0.5em;
+    margin-left: 1.2rem;
 }
 
 .ruby {
@@ -216,7 +227,6 @@ hr {
 .tiles .sideways {
     display: inline-block;
     transform: translateY(0.12em);
-    margin: 0 -0.1em;
 }
 
 .discards .tiles .sideways,
@@ -410,6 +420,10 @@ li.chapter-heading {
 }
 
 /* inline blocks */
+.inline ol, .inline ul, .inline .table-container {
+    padding-left: 2rem;
+}
+
 .inline ol, .inline ul, .inline li {
     margin: 0;
     line-height: initial;
@@ -431,15 +445,15 @@ li.chapter-heading {
     padding: 1rem 0;
 }
 
-/* mahjong-table */
-.tiles .tile-separator {
+.tiles .separated {
     display: inline-block;
-    width: calc(0.5 * var(--display-base, 2rem));
-    height: calc(0.5 * var(--display-base, 2rem));
+    margin-left: 1.2rem;
 }
 
+/* mahjong-table */
 .mahjong-table {
     --display-base: 1rem;
+    --separator-size: calc(0.6 * var(--display-base));
 }
 
 .mahjong-table {
@@ -447,11 +461,11 @@ li.chapter-heading {
     width: calc(36 * var(--display-base));
     height: calc(36.75 * var(--display-base));
 
-    max-width: 36em;
-    max-height: 36.75em;
+    max-width: 33em;
+    max-height: 33.75em;
 
-    grid-template-rows: 1fr 3.5fr 3fr 3.5fr 1.25fr;
-    grid-template-columns: 1fr 3.5fr 3fr 3.5fr 1fr;
+    grid-template-rows: 1fr 3fr 3fr 3fr 1.25fr;
+    grid-template-columns: 1fr 3fr 3fr 3fr 1fr;
     grid-template-areas:
         ".            hand-across     hand-across      hand-across   ."
         "hand-prev    discards-across discards-across  discards-next    hand-next"
@@ -628,6 +642,42 @@ li.chapter-heading {
     transform: rotate(180deg);
 }
 
+.mahjong-table .player-current .separated {
+    margin-left: var(--separator-size);
+}
+
+
+.mahjong-table .player-next .separated {
+    margin-left: 0;
+    margin-bottom: var(--separator-size);
+}
+
+.mahjong-table .player-across .separated {
+    margin-left: 0;
+    margin-right: var(--separator-size);
+}
+
+.mahjong-table .player-prev .separated {
+    margin-left: 0;
+    margin-top: var(--separator-size);
+}
+
+.mahjong-table .player-current.player-discards .separated {
+    margin-top: var(--separator-size);
+}
+
+.mahjong-table .player-next.player-discards .separated {
+    margin-left: var(--separator-size);
+}
+
+.mahjong-table .player-across.player-discards .separated {
+    margin-bottom: var(--separator-size);
+}
+
+.mahjong-table .player-prev.player-discards .separated {
+    margin-right: var(--separator-size);
+}
+
 .mahjong-table {
     margin: 12px 0;
 }
@@ -646,63 +696,59 @@ li.chapter-heading {
     }
 
     .hand-container {
-        margin: 0 2em;
+        margin: 0 2rem;
     }
 
     li .hand-container {
         margin: 0;
     }
-
-    .inline ol, .inline ul, .inline .table-container {
-        padding-left: 2rem;
-    }
 }
 
-@media screen and (max-width: 640px) {
-    .hand-contents .tiles {
-        font-size: calc((130vw - 24px) / var(--number-of-tiles, 14));
-    }
-
-    .hand.compact .hand-contents .tiles {
-        font-size: calc((130vw - 24px) / var(--number-of-tiles, 15));
-    }
-
+@media screen and (max-width: 540px) {
+    .hand-contents .tiles,
+    .hand.compact .hand-contents .tiles,
     .hand.compact .dora .tiles {
-        font-size: calc((130vw - 24px) / var(--number-of-tiles, 15))
+        font-size: calc((156vw - 24px) / var(--number-of-tiles, 15))
     }
 
     .hand.compact .rt {
         margin-top: -2.2vw;
     }
 
-    ul, ol {
-        padding-left: 12px;
-    }
-
     .example-list li {
         margin-top: calc(3vw);
+    }
+
+    ul, ol {
+        padding-left: 1rem;
     }
 }
 
 @media screen and (max-width: 375px) {
     .hand-contents .tiles {
         word-break: break-word;
-        font-size: 2.8em;
-        line-height: 0.5em;
+        font-size: 2.8rem;
+        line-height: 0.5rem;
     }
+
+    .hand-contents .tiles .sideways {
+        font-size: 2.8rem;
+        line-height: 0.5rem;
+    }
+
     .hand-contents  {
-        padding: 0.5em 0;
+        padding: 0.5rem 0;
     }
 
     .hand.compact .hand-contents .tiles,
     .hand.compact .dora .tiles {
         word-break: break-word;
-        font-size: 2.8em;
-        line-height: 0.5em;
+        font-size: 2.8rem;
+        line-height: 0.5rem;
     }
 
     .hand.compact .dora rt {
-        margin-bottom: 0.8em;
+        margin-bottom: 0.8rem;
     }
 
     .ruby .rt {
@@ -711,5 +757,13 @@ li.chapter-heading {
 
     .table-container th, .table-container td {
         overflow-wrap: anywhere;
+    }
+
+    ul, ol {
+        padding-left: 0;
+    }
+
+    .inline ol, .inline ul, .inline .table-container {
+        padding-left: 1rem;
     }
 }

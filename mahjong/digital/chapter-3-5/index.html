@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Passing the First Call; Not Calling Into Tenpai</title>
+    <link rel="stylesheet" type="text/css" href="https://natsuai.com/static/css/mahjong.css">
+    <script src="https://natsuai.com/static/js/mahjong.js"></script>
+    <script src="https://natsuai.com/static/js/mahjong-chrome-compatibility.js"></script>
+    
+</head>
+<body>
+    <header>
+        <div class="title-container">
+            <h1 class="title">Passing the First Call; Not Calling Into Tenpai</h1>
+            <h2 class="subtitle">Calling ⑤</h2>
+        </div>
+        <div class="navigation-links">
+            <div class="left">
+                <a class="left" href="https://natsuai.com/mahjong/digital/chapter-3-4/">Previous Page</a>
+            </div>
+
+            <div class="right">
+                <a href="..">Table of Contents</a>
+                <a class="convert-tiles" href="#">My tiles aren't showing properly</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <p>
+             Until now, I've said to call from the first tile, and always call into tenpai. Building upon this, here are some situations where I would instead not do so.
+        </p>
+        <div class="mahjong-table">
+            <div class="center">
+                <div class="situation-container">
+                    <div class="round-container"><div class="round">East 2</div></div>
+                    <div class="dora-indicator">Dora: <span class="tiles">r</span></div>
+                </div>
+                <div class="player-score player-current">
+                    <div class="wind">W</div>
+                    <div class="score"> 23200</div>
+                </div>
+                <div class="player-score player-next">
+                    <div class="wind">N</div>
+                    <div class="score"> 23900</div>
+                </div>
+                <div class="player-score player-across">
+                    <div class="wind">E</div>
+                    <div class="score"> 31800</div>
+                </div>
+                <div class="player-score player-prev">
+                    <div class="wind">S</div>
+                    <div class="score"> 21100</div>
+                </div>
+            </div>
+            <div class="player-hand player-current">
+                <span class="player-name"></span>
+                <div class="hand-container">
+                    <div class="hand compact">
+                        <div class="hand-contents"><span class="tiles">rtyuifgh33455</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="player-discards player-current">
+                <div class="discard-row"><span class="tiles">.ax7</span></div><div class="discard-row"><span class="tiles"></span></div><div class="discard-row"><span class="tiles"></span></div>
+            </div>
+            <div class="player-hand player-next">
+                <span class="player-name"></span>
+                <span class="tiles">9999999999999</span>
+            </div>
+            <div class="player-discards player-next">
+                <div class="discard-row"><span class="tiles">1.od</span></div><div class="discard-row"><span class="tiles"></span></div><div class="discard-row"><span class="tiles"></span></div>
+            </div>
+            <div class="player-hand player-across">
+                <span class="player-name"></span>
+                <span class="tiles">9999999999999</span>
+            </div>
+            <div class="player-discards player-across">
+                <div class="discard-row"><span class="tiles">q1jwd</span></div><div class="discard-row"><span class="tiles"></span></div><div class="discard-row"><span class="tiles"></span></div>
+            </div>
+            <div class="player-hand player-prev">
+                <span class="player-name"></span>
+                <span class="tiles">9999999999999</span>
+            </div>
+            <div class="player-discards player-prev">
+                <div class="discard-row"><span class="tiles">47q.<span class="separated">3</span></span></div><div class="discard-row"><span class="tiles"></span></div><div class="discard-row"><span class="tiles"></span></div>
+            </div>
+        </div>
+        <p>
+             First, passing the first call. In the situation above, we have a <span class="tiles">eyo</span> 3-sided shape, and two yakuhai pairs in <span class="tiles">35</span>. It looks like we can get into tenpai very soon. The <span class="tiles">3</span> comes out. Calling gives us a really good 2000-point tenpai. What would our hand be if we didn't call? What's the difference compared to last section's hand <strong>E</strong>?
+        </p>
+        <p>
+             The key is we are early on in a round, and have a wide 1-shanten that looks like we can declare riichi any moment. We also have two yakuhai pairs. Even if we pass up one tile, we still have three tiles we can potentially call.
+        </p>
+        <p>
+             As a result passing up on the first tile is best here. The hand is still fast if we wait for the next tile to call, so we can keep your hand closed for now to aim for a more valuable hand.
+        </p>
+        <p> Here are some more cases of when not to call into tenpai.</p>
+        <div class="paragraph">
+            <div class="hand-container">
+                <div class="hand compact">
+                    <div class="hand-contents"><span class="tiles">erttyuixcvnff</span></div><div class="dora">
+                        <div class="ruby ruby-center"><span class="tiles">v</span><div class="rt">Discarded</div></div>
+                    </div><div class="dora">
+                        <div class="ruby ruby-center"><span class="tiles">r</span><div class="rt">Dora</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>
+             This hand looks very likely to quickly become a two-or-more-sided tenpai. There's no reason to take a kanchan tenpai here. This is a case where your win rate is higher if we don't blindly rush to tenpai.
+        </p>
+        <div class="paragraph">
+            <div class="hand-container">
+                <div class="hand compact">
+                    <div class="hand-contents"><span class="tiles">eruuxcvsdfhj4</span></div><div class="dora">
+                        <div class="ruby ruby-center"><span class="tiles">w</span><div class="rt">Discarded</div></div>
+                    </div><div class="dora">
+                        <div class="ruby ruby-center"><span class="tiles">3</span><div class="rt">Dora</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>
+             Now look at this. 1-shanten for tanyao-pinfu-sanshoku. If we stay closed and riichi, this is an important hand that can easily become a mangan or haneman. If we call here, we will only have tanyao-sanshoku, a 2-han 2000-point hand. This is just a rough guideline, but when calling decreases the size of a hand by 3 han or more, we should probably stay closed to make our hand big, even if we have to make our hand slower as a result.
+        </p>
+         
+    </div>
+
+    <footer>
+
+        <div class="navigation-links">
+            <div class="left">
+                <a class="left" href="https://natsuai.com/mahjong/digital/chapter-3-4/">Previous Page</a>
+            </div>
+
+            <div class="right">
+                <a href="..">Table of Contents</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
