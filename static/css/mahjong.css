@@ -642,19 +642,14 @@ li.chapter-heading {
     transform: rotate(180deg);
 }
 
-.mahjong-table .player-current .separated {
+.mahjong-table .player-current .separated,
+.mahjong-table .player-across .separated {
     margin-left: var(--separator-size);
 }
-
 
 .mahjong-table .player-next .separated {
     margin-left: 0;
     margin-bottom: var(--separator-size);
-}
-
-.mahjong-table .player-across .separated {
-    margin-left: 0;
-    margin-right: var(--separator-size);
 }
 
 .mahjong-table .player-prev .separated {
@@ -671,7 +666,7 @@ li.chapter-heading {
 }
 
 .mahjong-table .player-across.player-discards .separated {
-    margin-bottom: var(--separator-size);
+    transform: translateY(var(--separator-size));
 }
 
 .mahjong-table .player-prev.player-discards .separated {
