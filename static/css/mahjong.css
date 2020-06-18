@@ -49,6 +49,14 @@ a {
     letter-spacing: -0.086em;
 }
 
+.dora .tiles {
+    letter-spacing: -0.05em;
+}
+
+.dora .tiles.otf {
+    letter-spacing: -0.02em;
+}
+
 p > .tiles,
 .paragraph > .tiles {
     padding-right: 0.112rem;
@@ -692,6 +700,10 @@ li.chapter-heading {
 
     .hand-container {
         margin: 0 2rem;
+    }
+
+    .mahjong-table .hand-container {
+        margin: 0;
     }
 
     li .hand-container {
