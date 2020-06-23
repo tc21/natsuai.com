@@ -734,28 +734,27 @@ li.chapter-heading {
 @media screen and (max-width: 375px) {
     .hand-contents .tiles {
         word-break: break-word;
-        font-size: 2.8rem;
-        line-height: 0.5rem;
+        font-size: 2.8em;
+        line-height: 0.5em;
     }
 
     .hand-contents .tiles .sideways {
-        font-size: 2.8rem;
-        line-height: 0.5rem;
+        line-height: 0.5em;
     }
 
     .hand-contents  {
-        padding: 0.5rem 0;
+        padding: 0.5em 0;
     }
 
     .hand.compact .hand-contents .tiles,
     .hand.compact .dora .tiles {
         word-break: break-word;
-        font-size: 2.8rem;
-        line-height: 0.5rem;
+        font-size: 2.8em;
+        line-height: 0.5em;
     }
 
     .hand.compact .dora rt {
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.8em;
     }
 
     .ruby .rt {
@@ -772,5 +771,9 @@ li.chapter-heading {
 
     .inline ol, .inline ul, .inline .table-container {
         padding-left: 1rem;
+    }
+
+    .mahjong-table .player-current .player-name {
+        margin-bottom: 0;
     }
 }
