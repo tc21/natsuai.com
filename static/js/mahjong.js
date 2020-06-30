@@ -1,22 +1,6 @@
 'use strict';
-// let tiles_text = 'Ea So We No Wh Gr Rd 1m 2m 3m 4m 5m 6m 7m 8m 9m 1p 2p 3p 4p 5p 6p 7p 8p 9p 1s 2s 3s 4s 5s 6s 7s 8s 9s'.split(' ');
-// let tiles_raw = '1234567qwertyuiozxcvbnm,.asdfghjkl'.split('');
-
-// function convert_to_text(element) {
-//     element.textContent = element.textContent.split('').map(
-//         (v, i, self) => tiles_text[tiles_raw.indexOf(v)]
-//     ).join(' ');
-//     element.classList.remove('tiles');
-//     element.classList.remove('otf');
-//     element.classList.add('tiles-text');
-// }
 
 function convert_to_raw(element) {
-    // element.textContent = element.textContent.split(' ').map(
-    //     (v, i, self) => tiles_raw[tiles_text.indexOf(v)]
-    // ).join('');
-    // element.classList.remove('tiles-text');
-    // element.classList.add('tiles');
     element.classList.remove('otf');
 }
 
@@ -28,20 +12,12 @@ function convert_tiles() {
     let tile_containers = document.getElementsByClassName('tiles otf');
     let convert_func = convert_to_raw;
     let new_link_text = "My tiles aren't showing correctly";
-    // let new_link_text = 'Try colored tiles again';
 
     if (tile_containers.length == 0) {
         tile_containers = document.getElementsByClassName('tiles');
         convert_func = convert_to_otf;
-        // new_link_text = "My tiles still aren't showing correctly!";
         new_link_text = 'Try colored tiles again';
     }
-
-    // if (tile_containers.length == 0) {
-    //     tile_containers = document.getElementsByClassName('tiles-text');
-    //     convert_func = convert_to_raw;
-    //     new_link_text = "My tiles aren't showing correctly";
-    // }
 
     tile_containers = Array.from(tile_containers);
 
@@ -54,8 +30,21 @@ function convert_tiles() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-    let convert_tiles_element = document.getElementsByClassName('convert-tiles');
-    for (let i = 0; i < convert_tiles_element.length; i++) {
-        convert_tiles_element[i].addEventListener('click', () => convert_tiles());
+    let convert_tiles_elements = document.getElementsByClassName('convert-tiles');
+    for (let i = 0; i < convert_tiles_elements.length; i++) {
+        convert_tiles_elements[i].addEventListener('click', () => convert_tiles());
+    }
+
+    let spoiler_elements = document.getElementsByClassName('spoiler');
+    for (let i = 0; i < spoiler_elements.length; i++) {
+        var spoiler_element = spoiler_elements[i];
+        spoiler_element.classList.add('hidden');
+        let reveal_spoiler_button = spoiler_element.getElementsByClassName('reveal-spoiler-button')[0];
+
+        if (reveal_spoiler_button.style.backdropFilter === undefined) {
+            reveal_spoiler_button.style.backgroundColor = 'white';
+        }
+
+        reveal_spoiler_button.addEventListener('click', () => spoiler_element.classList.remove('hidden'));
     }
 });
