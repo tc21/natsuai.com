@@ -80,6 +80,7 @@ p, .paragraph {
     margin: 1.4em 0;
 }
 
+.title .tiles,
 p .tiles,
 li .tiles,
 .paragraph .tiles,
@@ -235,6 +236,11 @@ hr {
 .tiles .sideways {
     display: inline-block;
     transform: translateY(0.12em);
+}
+
+.mahjong-table .player-hand.player-next .sideways,
+.mahjong-table .player-hand.player-prev .sideways {
+    transform: translateX(-0.12em);
 }
 
 .discards .tiles .sideways,
@@ -660,11 +666,7 @@ li.chapter-heading {
     margin-left: var(--separator-size);
 }
 
-.mahjong-table .player-next .separated {
-    margin-left: 0;
-    margin-bottom: var(--separator-size);
-}
-
+.mahjong-table .player-next .separated,
 .mahjong-table .player-prev .separated {
     margin-left: 0;
     margin-top: var(--separator-size);
