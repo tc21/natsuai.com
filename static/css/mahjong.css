@@ -10,9 +10,39 @@
 }
 
 :root {
-    --border-color: #78808c;
+    --grey-05: #f1f2f4;
+    --grey-10: #e2e4e9;
+    --grey-15: #d4d7dd;
+    --grey-20: #c6cad2;
+    --grey-25: #b8bdc7;
+    --grey-30: #aab0bb;
+    --grey-35: #9ba2b0;
+    --grey-40: #8e95a4;
+    --grey-45: #818898;
+    --grey-50: #747c8b;
+    --grey-55: #686f7d;
+    --grey-60: #5c6370;
+    --grey-65: #4f5663;
+    --grey-70: #444a55;
+    --grey-75: #383c47;
+    --grey-80: #2c2f3a;
+    --grey-85: #21232b;
+    --grey-90: #16181d;
+    --grey-95: #0b0c0f;
+
     --tile-size: 2.6em;
-    --text-color: #23262d;
+
+    --background: var(--grey-90);
+    --secondary-background: var(--grey-15);
+    --inverted-background: var(--grey-90);
+
+    --border-color: var(--grey-50);
+    --text-color: var(--grey-90);
+    --link-color: #186bd8;
+    --inverted-text-color: white;
+
+    --darken: rgba(0, 0, 0, 0.1);
+    --lighten: rgba(255, 255, 255, 0.6);
 }
 
 body {
@@ -27,13 +57,13 @@ pre {
 }
 
 code {
-    background-color: rgba(12, 15, 18, 0.1);
+    background-color: var(--darken);
     border-radius: 2px;
     padding: 0 2px;
 }
 
 a {
-    color: #186bd8;
+    color: var(--link-color);
 }
 
 .tiles {
@@ -70,7 +100,7 @@ p > .tiles.otf,
 .tiles-text {
     font-size: 1.1em;
     font-style: italic;
-    border: 1px solid var(--text-color);
+    border: 1px solid var(--inverted-background);
     border-radius: 2px;
     padding: 0 1px;
 }
@@ -199,7 +229,7 @@ hr {
     font-size: 0.72em;
     text-align: center;
     margin-top: -1.5em;
-    background: rgba(255, 255, 255, 0.6);
+    background: var(--lighten);
     border-radius: 2px;
     height: 1em;
     line-height: 1em;
@@ -298,8 +328,8 @@ li.chapter-heading {
 .example-list li::before {
     content: counter(list-counter, upper-alpha);
     border-radius: 2px;
-    background: var(--border-color);
-    color: white;
+    background: var(--inverted-background);
+    color: var(--inverted-text-color);
     line-height: 2em;
     margin: 2px 0.5em 2px 0;
     padding: 2px 1px;
@@ -390,7 +420,7 @@ li.chapter-heading {
 }
 
 .table-container tbody > :nth-child(2n) {
-    background-color: #dee2e7;
+    background-color: var(--secondary-background);
 }
 
 .table-container.two-column-data {
@@ -406,10 +436,10 @@ li.chapter-heading {
 }
 
 .table-container.strong-caption table caption {
-    background-color: var(--border-color);
+    background-color: var(--inverted-background);
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
-    color: white;
+    color: var(--inverted-text-color);
     margin: 4px 0;
 }
 
@@ -508,7 +538,7 @@ li.chapter-heading {
         "score-prev situation-box score-next"
         ".          score-current .";
 
-    border: 1px solid var(--text-color);
+    border: 1px solid var(--inverted-background);
     border-radius: 2px;
 }
 
@@ -523,9 +553,9 @@ li.chapter-heading {
     justify-content: center;
 
     padding: calc(0.5 * var(--display-base));
-    background-color: var(--text-color);
+    background-color: var(--inverted-background);
     border-radius: 2px;
-    color: white;
+    color: var(--inverted-text-color);
 }
 
 .mahjong-table .center .situation-container .round-container {
@@ -547,7 +577,7 @@ li.chapter-heading {
     justify-content: center;
 
     font-size: calc(0.8 * var(--display-base));
-    border-top: 1px dashed white;
+    border-top: 1px dashed var(--inverted-text-color);
 }
 
 .mahjong-table .center .player-score {
@@ -557,8 +587,8 @@ li.chapter-heading {
 }
 
 .mahjong-table .center .player-score .wind {
-    background-color: var(--text-color);
-    color: white;
+    background-color: var(--inverted-background);
+    color: var(--inverted-text-color);
     border-radius: 2px;
     margin: calc(0.2 * var(--display-base));
     width: calc(1.2 * var(--display-base));
@@ -820,5 +850,28 @@ li.chapter-heading {
 
     .mahjong-table .player-current .player-name {
         margin-bottom: 0;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html, body {
+        background-color: var(--background);
+    }
+
+    :root {
+        --secondary-background: var(--grey-80);
+        --inverted-background: var(--grey-75);
+
+        --text-color: var(--grey-25);
+        --border-color: var(--grey-70);
+        --link-color: #3c81db;
+        --inverted-text-color: var(--grey-25);
+
+        --darken: rgba(0, 0, 0, 0.2);
+        --lighten: #1b1e23a0;
+    }
+
+    .tiles:not(.otf) {
+        filter: invert(0.88) hue-rotate(180deg) brightness(0.88) saturate(0.8);
     }
 }

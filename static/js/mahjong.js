@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded", () => {
         let reveal_spoiler_button = spoiler_element.getElementsByClassName('reveal-spoiler-button')[0];
 
         if (reveal_spoiler_button.style.backdropFilter === undefined) {
-            reveal_spoiler_button.style.backgroundColor = 'white';
+            reveal_spoiler_button.style.backgroundColor = 'var(--background)';
         }
 
         reveal_spoiler_button.addEventListener('click', () => spoiler_element.classList.remove('hidden'));
