@@ -804,6 +804,10 @@ li.chapter-heading {
     ul, ol {
         padding-left: 1rem;
     }
+
+    body {
+        font-size: 120%;
+    }
 }
 
 @media screen and (max-width: 375px) {
