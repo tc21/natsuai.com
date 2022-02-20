@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <meta name="format-detection" content="telephone=no">
+    <title>Equal Proababilities</title>
+    <link rel="stylesheet" type="text/css" href="https://natsuai.com/static/css/mahjong.css">
+    <script src="https://natsuai.com/static/js/mahjong.js"></script>
+    <script src="https://natsuai.com/static/js/mahjong-chrome-compatibility.js"></script>
+    
+</head>
+<body>
+    <header>
+        <div class="title-container">
+            <h1 class="title">Equal Proababilities</h1>
+            <h2 class="subtitle">This Is Mahjong ⑧</h2>
+        </div>
+        <div class="navigation-links">
+            <div class="left">
+                <a class="left" href="https://natsuai.com/mahjong/digital/chapter-2-7/">Previous Page</a>
+                <a class="left" href="https://natsuai.com/mahjong/digital/chapter-2-9/">Next Page</a>
+            </div>
+
+            <div class="right">
+                <a href="..">Table of Contents</a>
+                <a class="convert-tiles" href="javascript:void(0)">My tiles aren't showing properly</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <p>
+             If I asked you, &ldquo;If I put one winning ticket and 2 losing tickets into a raffle, what is the chance of drawing the winning ticket?&rdquo; You'd probably immediately answer with 1 in 3. What's the reason for that? You can't just say that it's because 1 out of the 3 tickets is the winning one. The right way to think about it is, &ldquo;The tickets are winning, losing, and losing. The probability of drawing either one is equal. If you take the sum of probabilities to be 1, then 1/3 is the probability of any one of them being drawn.&rdquo;
+        </p>
+        <p>
+             In a probability question like this, you usually don't have to write out &ldquo;the probability of drawing either one is equal&rdquo;. But the fact that probabilities are equal is an important precondition to calculating the chances that something happens. If the precondition is not true, then we can't do the math. For example, if the winning ticket is near the bottom of the raffle box and are unlikely to be drawn, or if it's cut smaller and less likely to be drawn, then the probability is no longer 1/3.
+        </p>
+        <div class="paragraph">
+            <div class="hand-container">
+                <div class="hand compact">
+                    <div class="hand-contents"><span class="tiles">qwezxchjjkl444</span></div><div class="dora">
+                        <div class="ruby ruby-center"><span class="tiles">7</span><div class="rt">Dora</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>
+             Now, look at this hand. On the board, only honor tiles and a single <span class="tiles">g</span> have been discarded. Compare discarding <span class="tiles">4</span> and discarding <span class="tiles">j</span>. Which shape are you more likely to tsumo with? Let's assume that kans after riichi are disallowed, and that all your opponent will fully bail.
+        </p>
+        <p>
+             The right answer is &ldquo;we don't know&rdquo;. If you thought the answer was &ldquo;<span class="tiles">4</span> and <span class="tiles">m</span> are the same&rdquo;, think again. Sure, the number of <span class="tiles">gk</span> that you don't see is 6. The number of <span class="tiles">hl</span> you don't see is also 6. Thus you might think they are equally likely. But the question is which are you more likely to tsumo. In other words, which wait has more tiles in the wall?
+        </p>
+        <p>
+             &ldquo;What is the number of <span class="tiles">ghkl</span> held by someone who has cut <span class="tiles">g</span>?&rdquo; &ldquo;What is the number of <span class="tiles">ghkl</span> held by someone who has not cut souzu?&rdquo; Does there exist anyone who has the correct answer to those questions? Does there exist anyone who has meaningful data that can prove the answers to those questions?
+        </p>
+
+        <p>
+             There are many ways to imagine what it is. But we don't know how to balance the two choices. The only thing we can be sure of is, &ldquo;we can't be sure that there is the same number of <span class="tiles">gk</span> and <span class="tiles">hl</span> remaining in the wall&rdquo;. In other words, <span id="footnote-tag-1">as soon as there is information on the board<a class="footnote-link" href="#footnote-content-1" title="jump to footnote 1">[1]</a></span>, the remaining wall is no longer fully random, and the likelihood of drawing either of two waits is no longer equally probable.
+        </p>
+        <p>
+             Without the necessary precondition of equal probabilities, there is no way to actually do the math, and the only way to answer is &ldquo;we don't know&rdquo;. To calculate the probabilities anyway and call it an approximation is just not right.
+        </p>
+        <p> If that was a bit difficult, please proceed to the next page.</p>
+         
+    </div>
+
+    <footer>
+
+        <ol class="footnotes">
+            <li id="footnote-content-1">
+                <strong><a href="#footnote-tag-1" class="footnote-return-link" title="jump back">[^]</a></strong>
+                  I couldn't understand this sentence, so I translated it based on what I imagined it to be. The original is &ldquo;人間が意図をもって一部を公開した時点で...&rdquo;, literally &ldquo;when a human reveals part of their intentions...&rdquo;.
+            </li>
+        </ol>
+
+        <div class="navigation-links">
+            <div class="left">
+                <a class="left" href="https://natsuai.com/mahjong/digital/chapter-2-7/">Previous Page</a>
+                <a class="left" href="https://natsuai.com/mahjong/digital/chapter-2-9/">Next Page</a>
+            </div>
+
+            <div class="right">
+                <a href="..">Table of Contents</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
