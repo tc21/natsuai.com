@@ -11,9 +11,21 @@
         ul {
             margin-bottom: 8em;
         }
+
+        #incompatibility-banner {
+            max-width: 680px;
+            margin: 10px auto;
+            padding: 20px;
+            background-color: rgba(200, 100, 0, 0.15);
+            font-size: 0.95rem;
+        }
     </style>
 </head>
 <body>
+    <div id="incompatibility-banner">
+        Note: This translation uses an OpenType-SVG font to display mahjong tiles with color. OpenType-SVG fonts are supported by Firefox and Safari. On other browsers, you will see black-and-white tiles instead.
+    </div>
+
     <ul>
         <li><a href="https://natsuai.com/mahjong/digital/chapter-0/">0. Preface</a></li>
         <li class="chapter-heading">1. Tile Order - Hold On to 13 Efficient Tiles</li>
@@ -81,10 +93,10 @@
         <li><a href="https://natsuai.com/mahjong/digital/chapter-6-0/">6.0. Translator's Foreword</a></li>
         <li><a href="https://natsuai.com/mahjong/digital/chapter-6-1/">6.1. Camouflage Is Not a Thing of the Past</a></li>
         <li><a href="https://natsuai.com/mahjong/digital/chapter-6-2/">6.2. Discarding Useful Tiles</a></li>
-        <li><a href="https://natsuai.com/mahjong/digital/chapter-6-3/">6.3. Keeping Other Suits (Honitsu Camouflaging)</a></li>
-        <li>6.4. Camouflage for Kokushi-Musou</li>
+        <li><a href="https://natsuai.com/mahjong/digital/chapter-6-3/">6.3. Honitsu Camouflaging</a></li>
+        <li><a href="https://natsuai.com/mahjong/digital/chapter-6-4/">6.4. Kokushi-Musou Camouflaging</a></li>
         <li>6.5. Sakigiri to Confirm Akadora</li>
-        <li>6.6. Tsumogiri Tiles Next To Your Wait, Karagiri Tiles Faraway</li>
+        <li><a href="https://natsuai.com/mahjong/digital/chapter-6-6/">6.6. Tsumogiri vs. Karagiri</a></li>
         <li>6.7. How to Present a Pair Discard</li>
         <li class="chapter-heading">7. Placement Points - Mahjong Is a Game of Points and Placement</li>
         <li><a href="https://natsuai.com/mahjong/digital/chapter-7-1/">7.1. About Placement Points</a></li>
@@ -100,4 +112,15 @@
         <li><a href="https://natsuai.com/mahjong/digital/chapter-8-3/">8.3. Calling Previously Discarded Tiles</a></li>
     </ul>
 </body>
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+    for (let i = 0; i < incompatible_browsers.length; i++) {
+        if (navigator.userAgent.indexOf(incompatible_browsers[i]) >= 0) {
+            return;
+        }
+    }
+
+    document.getElementById("incompatibility-banner").style.display = 'none';
+});
+</script>
 </html>

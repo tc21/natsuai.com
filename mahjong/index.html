@@ -11,12 +11,35 @@
         ul {
             margin-bottom: 8em;
         }
+
+        #incompatibility-banner {
+            max-width: 680px;
+            margin: 10px auto;
+            padding: 20px;
+            background-color: rgba(200, 100, 0, 0.15);
+            font-size: 0.95rem;
+        }
     </style>
 </head>
 <body>
+    <div id="incompatibility-banner">
+        Note: This translation uses an OpenType-SVG font to display mahjong tiles with color. OpenType-SVG fonts are supported by Firefox and Safari. On other browsers, you will see black-and-white tiles instead.
+    </div>
+
     <ul>
         <li>
         <a href="https://natsuai.com/mahjong/digital">digital</a></li>
     </ul>
 </body>
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+    for (let i = 0; i < incompatible_browsers.length; i++) {
+        if (navigator.userAgent.indexOf(incompatible_browsers[i]) >= 0) {
+            return;
+        }
+    }
+
+    document.getElementById("incompatibility-banner").style.display = 'none';
+});
+</script>
 </html>
