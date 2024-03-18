@@ -1,0 +1,159 @@
+body {
+    display: flex;
+    font-family: sans-serif;
+}
+
+.container {
+    flex-direction: column;
+    border: 1px solid gray;
+    border-radius: 12px;
+    margin: 6px;
+    height: 100%;
+}
+
+.container-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 12px;
+}
+
+.container-body {
+    display: flex;
+    flex-wrap: wrap;
+    width: 460px;
+}
+
+.event {
+    width: 200px;
+    height:100%;
+    min-height: 120px;
+    max-height: 120px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 6px;
+
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(127, 127, 127, 0.1)
+}
+
+.event:active {
+    max-height: none;
+}
+
+.time {
+    display: flex;
+    font-size: 0.6rem;
+    color: grey;
+    flex: 0 0 auto;
+}
+
+.start_time, .end_time {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.title {
+    font-weight: 600;
+    margin: 2px;
+    flex: 0 0 auto;
+}
+
+.tags {
+    display: flex;
+    overflow-x: scroll;
+    color: grey;
+    flex: 0 0 auto;
+    white-space: nowrap;
+
+    -ms-overflow-style: none;
+}
+
+.tag {
+    border: 1px solid gray;
+    border-radius: 4px;
+    margin: 2px;
+    padding: 2px;
+    font-size: 0.6rem;
+}
+
+.description {
+    overflow-y: scroll;
+    min-height: 1px;
+    max-height: auto;
+    font-size: 0.8rem;
+    margin: 2px;
+    color: lightgrey;
+
+    -ms-overflow-style: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    .description {
+        color: dimgray;
+    }
+}
+
+.description::-webkit-scrollbar,
+.tags::-webkit-scrollbar{
+    display: none
+}
+
+.tag.goh {
+    border-color: #e88bd780;
+    color: #e88bd7B0;
+    background-color: #e88bd720;
+}
+
+.tag.indst {
+    border-color: #c6171a80;
+    color: #c6171aB0;
+    background-color: #c6171a20;
+}
+
+.tag.game {
+    border-color: #17c61a80;
+    color: #17c61aB0;
+    background-color: #17c61a20;
+}
+
+.tag.fan {
+    border-color: #067fd680;
+    color: #067fd6B0;
+    background-color: #067fd620;
+}
+
+.tag.cltrl {
+    border-color: #f4971680;
+    color: #f49716B0;
+    background-color: #f4971620;
+}
+
+.tag.prog {
+    border-color: #90daed80;
+    color: #90daedB0;
+    background-color: #90daed20;
+}
+
+.tag.sc-ma {
+    border-color: #ef21d080;
+    color: #ef21d0B0;
+    background-color: #ef21d020;
+}
+
+.tag.arch {
+    border-color: #afafaf80;
+    color: #afafafB0;
+    background-color: #afafaf20;
+}
+
+.tag.sumt {
+    border-color: #7c7c7c80;
+    color: #7c7c7cB0;
+    background-color: #7c7c7c20;
+}
+
+.tag.sc-10, .tag.all, .tag.sc-13 {
+    display: none;
+}
