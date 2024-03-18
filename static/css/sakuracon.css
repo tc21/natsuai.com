@@ -9,6 +9,8 @@ body {
     border-radius: 12px;
     margin: 6px;
     height: 100%;
+
+    position: relative;
 }
 
 .container-title {
@@ -38,7 +40,7 @@ body {
     background-color: rgba(127, 127, 127, 0.1)
 }
 
-.event:active {
+.event:focus-within {
     max-height: none;
 }
 
@@ -55,9 +57,14 @@ body {
 }
 
 .title {
-    font-weight: 600;
     margin: 2px;
     flex: 0 0 auto;
+}
+
+.title-text, .container-title-text {
+    font-weight: 600;
+    color: unset;
+    text-decoration: none;
 }
 
 .tags {
@@ -87,6 +94,35 @@ body {
     color: lightgrey;
 
     -ms-overflow-style: none;
+}
+
+@media screen and (max-width: 724px) {
+    body {
+        flex-direction: column;
+    }
+
+    .container {
+        border: none;
+    }
+
+    .container-body {
+        width: unset;
+    }
+
+    .event {
+        width: unset;
+        align-items: stretch;
+        flex-grow: 1;
+        min-width: 120px;
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .event {
+        flex-grow: 1;
+        width: 140px;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
