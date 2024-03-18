@@ -9,8 +9,11 @@ body {
     border-radius: 12px;
     margin: 6px;
     height: 100%;
+    max-height: calc(100vh - 24px);
 
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .container-title {
@@ -23,6 +26,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     width: 460px;
+    overflow-y: scroll;
 }
 
 .event {
@@ -86,7 +90,7 @@ body {
 }
 
 .description {
-    overflow-y: scroll;
+    overflow-y: hidden;
     min-height: 1px;
     max-height: auto;
     font-size: 0.8rem;
