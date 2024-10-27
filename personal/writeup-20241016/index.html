@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex">
+        <meta name="format-detection" content="telephone=no">
+    </head>
+    <body>
+        <div id="content">
+Part 1 - Hardware specification
+Part 1.1 - External inputs:
+
+- Power:
+┏━━┳━━┓
+┃+5V┃GND┃
+┗━━┻━━┛
+
+- Controller output:
+┏━┳━┳━┳━┳━┓
+┃１┃２┃３┃４┃５┃
+┣━╋━╋━╋━╋━┫
+┃６┃７┃８┃９┃０┃
+┗━┻━┻━┻━┻━┛
+C1 - clock
+C2 - Y (red led?)
+C3 - B (row selection bit 1?)
+C4 - unused
+C5 - unused
+C6 - unused
+C7 - X (green led?)
+C8 - A (row selection bit 0?)
+C9 - C (row selection bit 2?)
+C0 - ground (again)
+
+Part 1.2 - Row Selection?
+
+- LS138
+   Vcc　Y0 　Y1　 Y2　 Y3　 Y4　 Y5　 Y6
+┏━╋━━╋━━╋━━╋━━╋━━╋━━╋━━╋━┓
+┃⊃                                 　┃
+┗━╋━━╋━━╋━━╋━━╋━━╋━━╋━━╋━┛
+   A  　B  　C 　 G2a　G2b　G1 　Y7　 GND
+- 3-8 demux
+
+inputs:
+ C8 -> A
+ C3 -> B
+ C9 -> C
+outputs:
+ Y0...Y7 -> led dot matrix display
+
+Part 1.3 - Column Selection?
+
+- LS164 (24 total, numbered #1 - #24)
+   Vcc　Qh 　Qg　 Qf　 Qe　 CLR　CLK
+┏━╋━━╋━━╋━━╋━━╋━━╋━━╋━┓
+┃⊃                              ┃
+┗━╋━━╋━━╋━━╋━━╋━━╋━━╋━┛
+   A  　B  　Qa　 Qb 　Qc 　Qd 　GND
+- serial shift registers
+-- on clock up:
+--  Qa = A & B
+--  Qb = A & B of previous clock cycle
+--  Qc = A & B of 2 clock cycles ago
+--  ...
+--  Qh = A & B of 7 clock cycles ago
+
+inputs:
+ C1 -> CLK
+ C7 -> A & B of #1
+ C2 -> A & B of #2
+ Qg of #(N-2) -> A & B of #3-24
+
+outputs:
+ Qa...Qg -> (ULN2002A 7b...1b; see below)
+ Qg -> A & B of #(N+2)
+ (Qh unused)
+
+- ULN2002A (24 total)
+   1C 　2C 　3C 　4C 　5C 　6C 　7C 　COM
+┏━╋━━╋━━╋━━╋━━╋━━╋━━╋━━╋━┓
+┃⊃                                 　┃
+┗━╋━━╋━━╋━━╋━━╋━━╋━━╋━━╋━┛
+   1B 　2B 　3B 　4B 　5B 　6B 　7B 　E(GND)
+- just increases voltage of 1B to 1C, 2B to 2C, etc.
+
+inputs:
+ Qg of #N -> 1B of #N
+ Qf of #N -> 2B of #N
+ ...
+ Qa of #N -> 7B of #N
+
+outputs:
+ 1C...7C -> led dot matrix display
+
+Part 1.4 - LED dot matrix display
+Part number: TOM2057FEG-1B
+- that's it. it's a 2-color LED dot matrix display (the two colors are green and red). i have no idea how it works
+
+Part 2 - experiment results; analysis
+
+Part 2.1 - experiment results
+
+By setting X = 1, Y = 1, A = 1, B = 1, C = 1 and then cycling the clock, we were able to set all LEDs of the top row (we will call it row 7) to orange (green + red).
+
+At clock cycle 1, the upper-left (row 7, column 1) is turned on. At clock cycle 2, row 7 column 2 turns on as well. Some clock cycles nothing changes, but most clock cycles turn one more light on. Eventually, all 80 lights in row 7 become orange.
+
+However, setting row 7 LEDs to orange is the only action that is reproducible. By setting X = 0, Y = 1, we were able to (very briefly, by chance,) set some LEDs (around the middle of the top row) red. No LEDs of rows 1...6 were ever set to any color.
+
+When A, B, or C is not 1, though, we can notice faint flickering in all lights of the other rows. We suspect the binary number ABC (or is it CBA? I don't quite remember) selects which row to turn lights on or off. (Though we were only able to operate on row 7, and only turning lights on. Never off.)
+
+Part 2.1 - analysis
+
+There are 24 LS164, each feeding into a ULN2002A, for a total of 164 connections into the 80x7 dot matrix display.
+
+We notice the 24 LS164 are split into 2 sets of 12: controller output X feeds inputs A & B of LS164 #1, LS164 #1 output Qg feeds inputs A & B of LS164 #3, and so forth for #5, #7, ... Controller output Y feeds inputs A & B of LS164 #2, etc.
+
+Therefore we conclude X and Y control the green and red LEDs respectively, and each group has 82 outputs. We suspect that 80 of those outputs control what to show in each column. By setting X = 1, Y = 1 and cycling the clock, we are turning on column #N and clock cycle #N, and never turning it off. That is why we see the behavior of lights turning on one by one. It is orange because orange is red plus green.
+
+It is unclear why we can only control row 7. It is also unclear why we don't see lights turning on with X = 0, Y = 1 or X = 1, Y = 0.
+        </div>
+        <style>
+            @font-face {
+                font-family: 'Source Han Code JP';
+                src: url('https://natsuai.com/static/fonts/SourceHanCodeJP-Regular.otf') format('opentype');
+            }
+
+            #content {
+                max-width: 800px;
+                margin: 0 auto;
+                white-space: preserve;
+                font-family: 'Source Han Code JP', monospace;
+            }
+        </style>
+    </body>
+</html>
