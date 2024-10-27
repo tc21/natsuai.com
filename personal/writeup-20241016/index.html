@@ -32,6 +32,13 @@ C8 - A (row selection bit 0?)
 C9 - C (row selection bit 2?)
 C0 - ground (again)
 
+- easier to understand version?
+┏━━┳━━┳━━┳━━┳━━┓
+┃CLK┃ Y ┃ B ┃   ┃   ┃
+┣━━╋━━╋━━╋━━╋━━┫
+┃   ┃ X ┃ A ┃ C ┃GND┃
+┗━━┻━━┻━━┻━━┻━━┛
+
 Part 1.2 - Row Selection?
 
 - LS138
@@ -43,9 +50,9 @@ Part 1.2 - Row Selection?
 - 3-8 demux
 
 inputs:
- C8 -> A
- C3 -> B
- C9 -> C
+ C8 (A) -> A
+ C3 (B) -> B
+ C9 (C) -> C
 outputs:
  Y0...Y7 -> led dot matrix display
 
@@ -67,8 +74,8 @@ Part 1.3 - Column Selection?
 
 inputs:
  C1 -> CLK
- C7 -> A & B of #1
- C2 -> A & B of #2
+ C7 (X) -> A & B of #1
+ C2 (Y) -> A & B of #2
  Qg of #(N-2) -> A & B of #3-24
 
 outputs:
