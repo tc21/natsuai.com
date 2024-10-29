@@ -109,15 +109,15 @@ Part 1.4 - LED dot matrix display
 Part number: TOM2057FEG-1B
 
 Let us label output Qa of LS164#1, input 7B/output 7C of ULN2002A#1 X_out#1
-         ... output Qb of LS164#1, input 6B/output 6C of ULN2002A#1 X_out#2
-         ... output Qa of LS164#3, input 7B/output 7C of ULN2002A#3 X_out#8
-         ... output Qa of LS164#2, input 7B/output 7C of ULN2002A#2 Y_out#1
+         ... output <red>Qb</red> of LS164#1, input <red>6</red>B/output <red>6</red>C of ULN2002A#1 X_out#<red>2</red>
+         ... output Qa of LS164#<green>3</green>, input 7B/output 7C of ULN2002A#<green>3</green> X_out#<green>8</green>
+         ... output Qa of LS164#<blue>2</blue>, input 7B/output 7C of ULN2002A#<blue>2</blue> <blue>Y</blue>_out#1
              etc.
 
 Now we have X_out #1-84 and Y_out#1-84.
 X_out#01..40 control the red LED of columns 01..40 of the board
-X_out#43..82 ...                            41..80
-Y_out ...                green
+X_out#<red>43..82</red> ...                            <red>41..80</red>
+<green>Y</green>_out ...                <green>green</green>
 
 Part 2 - experiment results; analysis
 
@@ -152,6 +152,18 @@ It is unclear why we can only control row 7. It is also unclear why we don't see
                 margin: 0 auto;
                 white-space: preserve;
                 font-family: 'Source Han Code JP', monospace;
+            }
+
+            red {
+                color: hsl(0, 33%, 50%)
+            }
+
+            green {
+                color: hsl(128, 33%, 50%)
+            }
+
+            blue {
+                color: hsl(223, 33%, 50%)
             }
         </style>
     </body>
